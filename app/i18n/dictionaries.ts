@@ -54,7 +54,9 @@ export interface Dictionary {
     title: string;
     intro: string;
     beat: string;
-    cost: string;
+    costIntro: string;
+    costBullets: string[];
+    costClosing: string;
     risk: string;
     credibility: string;
     hook: string;
@@ -337,19 +339,25 @@ export const dictionaries: Record<Locale, Dictionary> = {
     declic: {
       title: "Le déclic",
       intro:
-        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce qu'entre l'agence à 40 000 € qui te promet six mois, et le freelance qui disparaît trois semaines sans donner de nouvelles, personne ne t'a proposé ==un chemin court==.",
-      beat: "Et le temps, dans ton cas, ne coûte pas seulement de l'argent.",
-      cost:
-        "Six mois de développement, c'est six mois où tu paies sans ==tester ton produit sur le marché réel==. Où tu enrichis un cahier des charges au lieu d'écouter des utilisateurs. Où ton budget fond sur des réunions et des maquettes pendant qu'un concurrent, lui, encaisse ses premiers clients. J'ai vu des porteurs de projet arriver à la livraison, avoir le produit enfin en ligne, mais ==plus un euro pour le faire connaître==, et une idée qui ne correspondait pas au marché.",
+        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce qu'entre l'agence à 40 000 € qui te promet six mois pour avoir une première version, et le freelance qui disparaît sans donner de nouvelles, personne ne t'a proposé ==un chemin court==.",
+      beat: "Et dans ton cas, le temps perdu coûte bien plus que de l'argent.",
+      costIntro:
+        "Six mois de développement, c'est six mois où tu paies sans ==tester ton produit sur le marché réel==.",
+      costBullets: [
+        "Tu enrichis un cahier des charges au lieu d'écouter des utilisateurs.",
+        "Ton budget fond sur des réunions et des maquettes pendant qu'un concurrent, lui, encaisse ses premiers clients.",
+      ],
+      costClosing:
+        "J'ai vu des porteurs de projet mettre leur produit en ligne après des mois de développement, sans ==plus un euro pour le faire connaître==, et avec une idée qui ne correspondait plus au marché.",
       risk: "Le vrai risque n'est pas de construire le mauvais produit. C'est de mettre si longtemps à le construire que ==tu n'as plus les moyens de le corriger==.",
       credibility:
-        "J'ai passé ces dernières années à construire des plateformes pour des institutions, des particuliers et des entreprises : Ministère de la Justice du Bénin, Autorité de Protection des Données Personnelles...",
+        "J'ai passé ces dernières années à construire des plateformes pour des institutions gouvernementales et des startups : Ministère de la Justice du Bénin, Autorité de Protection des Données Personnelles...",
       hook: "Mais ce qui m'a le plus marqué, ce sont ces projets startup que j'ai vus se construire pendant des mois pour finir avec ==trois utilisateurs==.",
       team: "Des équipes qui ont tout donné. Un produit soigné, complet, bien codé. Et personne en face. Le budget parti, l'énergie aussi, et cette question qui arrive trop tard : ==est-ce que quelqu'un en voulait vraiment ?==",
       insight:
         "Le déclic est venu de là. Ces projets n'ont pas échoué par manque de compétence technique — ==ils étaient souvent mieux construits que ceux qui marchent==. Ils ont échoué parce qu'ils ont attendu six mois avant de poser la seule question qui compte : ==est-ce que ça intéresse quelqu'un ?==",
       contrast:
-        "Un produit qu'on met ==quatre semaines== à sortir peut se tromper. Il reste du budget pour corriger. Un produit qu'on met ~~huit mois~~ à sortir n'a pas le droit à l'erreur — et c'est précisément ce qui le condamne.",
+        "Un produit sorti en ==quatre semaines== a le droit de se tromper : il reste du budget pour corriger. Un produit sorti en ~~huit mois~~ a moins le droit à l'erreur, et c'est exactement ce qui le condamne.",
       methodIntro: "D'où ma méthode :",
       method:
         "On fige le périmètre avant d'écrire la première ligne. Tu vois une démo chaque semaine, pas un rapport d'avancement. Et à la fin, ==le code t'appartient entièrement== — tu n'es prisonnier de personne, moi compris.",
@@ -358,7 +366,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     solution: {
       title: "La solution",
       description:
-        "Un développeur fullstack confirmé, 100 % dédié à ton projet pendant 4 semaines, avec une méthode déjà éprouvée sur des plateformes réelles — pas un stagiaire, ni un développeur qui utilise l'IA sans comprendre ce qu'il produit, ni comment corriger les bugs qui en sortent.",
+        "On décide ensemble ce qui entre dans la première version, et surtout ce qui n'y entre pas. Quatre semaines plus tard, ton produit est en ligne et confronté à de vrais utilisateurs. Tu arrêtes de deviner : tu t'appuies sur leurs retours pour savoir quoi développer ensuite.",
     },
     situation: {
       title: "Dans 4 semaines, voici où tu en seras",
@@ -558,19 +566,25 @@ export const dictionaries: Record<Locale, Dictionary> = {
     declic: {
       title: "The turning point",
       intro:
-        "If your project hasn't shipped yet, it's not because your idea is bad. It's because between the agency quoting €40,000 and six months, and the freelancer who vanishes for three weeks without a word, no one has offered you ==a short path==.",
-      beat: "And in your case, time doesn't just cost money.",
-      cost:
-        "Six months of development is six months paying without ==testing your product on the real market==. Six months polishing a spec instead of listening to users. Six months burning your budget on meetings and mockups while a competitor is already signing their first customers. I've seen founders reach launch, finally get the product live, and have ==no money left to make it known==, with an idea that didn't fit the market.",
+        "If your project hasn't shipped yet, it's not because your idea is bad. It's because between the agency quoting €40,000 and six months for a first version, and the freelancer who vanishes without a word, no one has offered you ==a short path==.",
+      beat: "And in your case, lost time costs far more than money.",
+      costIntro:
+        "Six months of development is six months paying without ==testing your product on the real market==.",
+      costBullets: [
+        "You keep polishing a spec instead of listening to users.",
+        "Your budget burns on meetings and mockups while a competitor is already signing their first customers.",
+      ],
+      costClosing:
+        "I've seen founders put their product live after months of development, with ==no money left to make it known==, and an idea that no longer fit the market.",
       risk: "The real risk isn't building the wrong product. It's taking so long to build it that ==you no longer have the means to fix it==.",
       credibility:
-        "Over the past few years I've built platforms for institutions, individuals and companies: Benin's Ministry of Justice, the Personal Data Protection Authority...",
+        "Over the past few years I've built platforms for government institutions and startups: Benin's Ministry of Justice, the Personal Data Protection Authority...",
       hook: "But what struck me most were the startup projects I watched get built for months, only to end up with ==three users==.",
       team: "Teams that gave everything. A polished, complete, well-built product. And no one on the other side. The budget gone, the energy gone, and the question that comes too late: ==did anyone actually want this?==",
       insight:
         "That's where the turning point came from. Those projects didn't fail from a lack of technical skill — they were often better built than the ones that succeed. They failed because they waited six months before asking the only question that matters: ==is anyone interested in this?==",
       contrast:
-        "A product shipped in ==four weeks== can be wrong. There's still budget left to fix it. A product that takes ~~eight months~~ to ship doesn't get to be wrong — and that's exactly what dooms it.",
+        "A product shipped in ==four weeks== has the right to be wrong: there's still budget left to fix it. A product shipped in ~~eight months~~ has less room for error, and that's exactly what dooms it.",
       methodIntro: "Hence my method:",
       method:
         "We lock the scope before writing a single line. You see a demo every week, not a status report. And at the end, ==the code is entirely yours== — you're not held hostage by anyone, me included.",
@@ -579,7 +593,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     solution: {
       title: "The solution",
       description:
-        "A seasoned fullstack developer, 100% dedicated to your project for 4 weeks, with a method already proven on real-world platforms — not an intern, and not a developer who uses AI without understanding what it produces or how to fix the bugs it creates.",
+        "We decide together what goes into the first version — and, more importantly, what doesn't. Four weeks later, your product is live and facing real users. You stop guessing: their feedback tells you what to build next.",
     },
     situation: {
       title: "Here's where you'll be in 4 weeks",

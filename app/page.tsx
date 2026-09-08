@@ -130,7 +130,18 @@ export default function Home() {
             </p>
             <p className="text-lg font-medium text-white">{dict.declic.beat}</p>
             <p>
-              <Emphasized text={dict.declic.cost} />
+              <Emphasized text={dict.declic.costIntro} />
+            </p>
+            <ul className="flex flex-col gap-2">
+              {dict.declic.costBullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <span className="mt-1 text-emerald-400">•</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              <Emphasized text={dict.declic.costClosing} />
             </p>
             <p>
               <Emphasized text={dict.declic.risk} />
