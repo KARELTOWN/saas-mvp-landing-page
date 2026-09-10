@@ -69,6 +69,13 @@ export interface Dictionary {
   solution: { title: string; description: string };
   situation: { title: string; items: string[] };
   process: { title: string; subtitle: string; phases: Phase[] };
+  caseStudy: {
+    title: string;
+    subtitle: string;
+    projectName: string;
+    projectUrl: string;
+    steps: { label: string; text: string }[];
+  };
   pricing: { title: string; priceLabel: string; description: string; bullets: string[] };
   bonuses: { title: string; items: Bonus[] };
   guarantee: { title: string; lead: string; detail: string };
@@ -88,7 +95,6 @@ export interface Dictionary {
     forYouHeading: string;
     forYouAnswer: string;
     closing: string;
-    recognition: string;
     cta: string;
   };
   footer: { line: string; linkedin: string };
@@ -110,27 +116,17 @@ const projectsFr: Project[] = [
     year: "2026",
     role: "Développeur Vue.js / Fullstack",
     description:
-      "Interface Vue.js réactive pour une application de collecte d'avis client et d'analyse par IA, afin d'aider les équipes à exploiter les retours et faciliter la prise de décision.",
+      "Application de collecte d'avis client et d'analyse par IA, pour aider les équipes à exploiter les retours et faciliter la prise de décision.",
     stack: ["JavaScript", "Vue", "Express.js", "API OpenAI", "API REST"],
     image: "/projects/bugreveal.png",
     url: "https://bugreveal.com/",
-  },
-  {
-    name: "RGNR Horizon",
-    year: "2025 - Aujourd'hui",
-    role: "Développeur Vue.js / Fullstack JS",
-    description:
-      "Interfaces Vue.js/Nuxt réactives pour une plateforme privée santé et bien-être : espace membre, contenus, recherche, recommandations IA, authentification sécurisée et API métier.",
-    stack: ["TypeScript", "Nuxt 4", "Vue 3", "Symfony 7", "JWT", "Typesense"],
-    image: "/projects/horizon.png",
-    url: "https://horizon-dev.rgnr.xyz/auth/login",
   },
   {
     name: "PISJ",
     year: "2024",
     role: "Développeur Vue.js puis chef de projet",
     description:
-      "Interfaces Vue.js pour la plateforme d'information et de signalement judiciaire : parcours usager, traitement de dossiers, coordination projet et suivi de livraison.",
+      "Plateforme d'information et de signalement judiciaire : parcours usager, traitement de dossiers, coordination projet et suivi de livraison.",
     stack: ["PHP", "Laravel", "Vue", "MySQL"],
     image: "/projects/pisj.png",
     url: "https://pisj.justice.bj/",
@@ -140,7 +136,7 @@ const projectsFr: Project[] = [
     year: "2024",
     role: "Développeur Vue.js / Fullstack",
     description:
-      "Interfaces Vue.js pour la génération d'arrêtés au Ministère de la Justice : arrêtés de droit du sol, de mariage, de nationalité béninoise et de répudiation de nationalité, formulaires métier et automatisation documentaire.",
+      "Plateforme de génération d'arrêtés pour le Ministère de la Justice : arrêtés de droit du sol, de mariage, de nationalité béninoise et de répudiation de nationalité, formulaires métier et automatisation documentaire.",
     stack: ["PHP", "Laravel", "Vue", "Workflow"],
     image: "/projects/arrete-justice.png",
     url: "https://arrete.justice.bj/",
@@ -150,7 +146,7 @@ const projectsFr: Project[] = [
     year: "2024",
     role: "Développeur Vue.js / Fullstack",
     description:
-      "Interfaces Vue.js pour une application de gestion de parc automobile : suivi des véhicules, connectée à une API Laravel.",
+      "Application de gestion de parc automobile : suivi des véhicules, connectée à une API Laravel.",
     stack: ["PHP", "Laravel", "Vue"],
     image: "/projects/cleva.png",
     url: "https://cleva.waouhmonde.com/",
@@ -160,7 +156,7 @@ const projectsFr: Project[] = [
     year: "2023",
     role: "Développeur Vue.js / Fullstack",
     description:
-      "Interfaces Vue.js fidèles au design, connectées à une API Laravel : tableaux de bord, formulaires, droits d'accès et suivi opérationnel.",
+      "Application de gestion administrative connectée à une API Laravel : tableaux de bord, formulaires, droits d'accès et suivi opérationnel.",
     stack: ["PHP", "Laravel", "Vue", "Back-office"],
     image: "/projects/barreau-togo.png",
     url: "https://administration.barreaudutogo.tg/",
@@ -170,7 +166,7 @@ const projectsFr: Project[] = [
     year: "2022",
     role: "Développeur Vue.js/Nuxt.js",
     description:
-      "Sites institutionnels et module de paiement en Nuxt.js consommant une API SOAP pour Drupal, Joomla et Prestashop.",
+      "Site réalisé en Nuxt et module de paiement consommant une API SOAP pour Drupal, Joomla et Prestashop.",
     stack: ["Nuxt.js", "Laravel", "SOAP", "CMS"],
     image: "/projects/web-institutionnel.png",
     url: "https://apiex.bj/",
@@ -183,27 +179,17 @@ const projectsEn: Project[] = [
     year: "2026",
     role: "Vue.js / Fullstack Developer",
     description:
-      "Reactive Vue.js interface for a customer feedback collection and AI-analysis app, helping teams act on feedback and speed up decision-making.",
+      "Customer feedback collection and AI-analysis application, helping teams act on feedback and speed up decision-making.",
     stack: ["JavaScript", "Vue", "Express.js", "OpenAI API", "REST API"],
     image: "/projects/bugreveal.png",
     url: "https://bugreveal.com/",
-  },
-  {
-    name: "RGNR Horizon",
-    year: "2025 - Present",
-    role: "Vue.js / Fullstack JS Developer",
-    description:
-      "Reactive Vue.js/Nuxt interfaces for a private health & wellness platform: member area, content, search, AI recommendations, secure authentication and business API.",
-    stack: ["TypeScript", "Nuxt 4", "Vue 3", "Symfony 7", "JWT", "Typesense"],
-    image: "/projects/horizon.png",
-    url: "https://horizon-dev.rgnr.xyz/auth/login",
   },
   {
     name: "PISJ",
     year: "2024",
     role: "Vue.js Developer, then Project Lead",
     description:
-      "Vue.js interfaces for the judicial information and reporting platform: user journeys, case handling, project coordination and delivery tracking.",
+      "Judicial information and reporting platform: user journeys, case handling, project coordination and delivery tracking.",
     stack: ["PHP", "Laravel", "Vue", "MySQL"],
     image: "/projects/pisj.png",
     url: "https://pisj.justice.bj/",
@@ -213,7 +199,7 @@ const projectsEn: Project[] = [
     year: "2024",
     role: "Vue.js / Fullstack Developer",
     description:
-      "Vue.js interfaces for generating official decrees at the Beninese Ministry of Justice: land rights, marriage, nationality and nationality-renunciation decrees, business forms and document automation.",
+      "Platform for generating official decrees at the Beninese Ministry of Justice: land rights, marriage, nationality and nationality-renunciation decrees, business forms and document automation.",
     stack: ["PHP", "Laravel", "Vue", "Workflow"],
     image: "/projects/arrete-justice.png",
     url: "https://arrete.justice.bj/",
@@ -223,7 +209,7 @@ const projectsEn: Project[] = [
     year: "2024",
     role: "Vue.js / Fullstack Developer",
     description:
-      "Vue.js interfaces for a fleet management application: vehicle tracking, connected to a Laravel API.",
+      "Fleet management application: vehicle tracking, connected to a Laravel API.",
     stack: ["PHP", "Laravel", "Vue"],
     image: "/projects/cleva.png",
     url: "https://cleva.waouhmonde.com/",
@@ -233,7 +219,7 @@ const projectsEn: Project[] = [
     year: "2023",
     role: "Vue.js / Fullstack Developer",
     description:
-      "Design-accurate Vue.js interfaces connected to a Laravel API: dashboards, forms, access rights and operational tracking.",
+      "Administrative management application connected to a Laravel API: dashboards, forms, access rights and operational tracking.",
     stack: ["PHP", "Laravel", "Vue", "Back-office"],
     image: "/projects/barreau-togo.png",
     url: "https://administration.barreaudutogo.tg/",
@@ -243,7 +229,7 @@ const projectsEn: Project[] = [
     year: "2022",
     role: "Vue.js/Nuxt.js Developer",
     description:
-      "Institutional websites and a Nuxt.js payment module consuming a SOAP API for Drupal, Joomla and Prestashop.",
+      "Site built with Nuxt and a payment module consuming a SOAP API for Drupal, Joomla and Prestashop.",
     stack: ["Nuxt.js", "Laravel", "SOAP", "CMS"],
     image: "/projects/web-institutionnel.png",
     url: "https://apiex.bj/",
@@ -309,7 +295,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "Ton application en 4 semaines — Karel Towanou",
       description:
-        "Développeur Vue.js & Nuxt.js pour SaaS et startups. Je transforme ton idée en application fonctionnelle en 4 semaines, du cadrage au lancement. Prix sur devis.",
+        "Développeur Vue.js & Nuxt.js pour SaaS et startups. Je transforme ton idée en application fonctionnelle en 4 semaines, du cadrage au lancement. 1 000 € prix fixe.",
     },
     nav: { solution: "Solution", process: "Process", pricing: "Tarifs", faq: "FAQ", cta: "Réserver un appel" },
     hero: {
@@ -320,7 +306,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Je ==transforme ton idée== en ==application fonctionnelle==, que tu peux montrer à tes premiers utilisateurs en un mois. Leurs retours te disent quoi construire ensuite, au lieu de le deviner.",
       ctaPrimary: "Réserver mon appel de cadrage",
       ctaSecondary: "Voir le déroulé",
-      note: "Prix sur devis · Appel de cadrage gratuit · Aucun engagement",
+      note: "1 000 € prix fixe · Appel de cadrage gratuit · Aucun engagement",
     },
     trust: { label: "Déjà utilisé pour :" },
     problems: {
@@ -338,7 +324,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     declic: {
       title: "Le déclic",
       intro:
-        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce qu'entre l'agence à 40 000 € qui te promet six mois pour avoir une première version, et le freelance qui disparaît sans donner de nouvelles, personne ne t'a proposé ==un chemin court==.",
+        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce qu'entre l'agence à 5 000 € qui te promet six mois pour avoir une première version, et le freelance qui disparaît sans donner de nouvelles, personne ne t'a proposé ==un chemin court==.",
       beat: "Et dans ton cas, le temps perdu coûte bien plus que de l'argent.",
       costIntro:
         "Six mois de développement, c'est six mois où tu paies sans ==tester ton produit sur le marché réel==.",
@@ -381,14 +367,38 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "Un processus simple, découpé en 4 phases, avec un point d'avancement chaque semaine.",
       phases: phasesFr,
     },
+    caseStudy: {
+      title: "Étude de cas",
+      subtitle: "Un projet personnel, pour te montrer la méthode en conditions réelles.",
+      projectName: "OpinBase",
+      projectUrl: "https://bugreveal.com/",
+      steps: [
+        {
+          label: "Le problème",
+          text: "Les commerçants — physiques comme en ligne — n'ont pas de moyen simple de savoir ce que leurs clients pensent vraiment, et prennent des décisions sur leurs produits et services sans données fiables.",
+        },
+        {
+          label: "Le périmètre figé",
+          text: "Génération de QR code, collecte d'avis publique, dashboard basique, notifications Telegram en temps réel. Rien d'autre pour la v1 — l'analyse IA, les recommandations et les alertes sont venues après, une fois le produit validé par l'usage.",
+        },
+        {
+          label: "La durée réelle",
+          text: "4 semaines, du premier commit à un produit notifié en temps réel et utilisable par de vrais commerçants.",
+        },
+        {
+          label: "Le résultat",
+          text: "Savoir ce que les clients ne disent pas spontanément, améliorer ses produits et services en conséquence, et fidéliser sa clientèle.",
+        },
+      ],
+    },
     pricing: {
       title: "L'investissement",
-      priceLabel: "Sur devis",
+      priceLabel: "1 000 €",
       description:
-        "Chaque application est différente : le prix dépend du périmètre fonctionnel, des intégrations tierces et du niveau de finition attendu. Pas de forfait générique qui te fait payer pour des fonctionnalités dont tu n'as pas besoin.",
+        "Un tarif fixe pour une v1 complète en 4 semaines : cadrage, développement, tests et mise en production. Pensé pour tester ton idée vite, sans te ruiner.",
       bullets: [
-        "Devis détaillé après l'appel de cadrage, sans surprise",
-        "Découpage en lots pour prioriser ce qui compte vraiment",
+        "5 fois moins cher qu'une agence de développement, qui te facturera au minimum 5 000 € pour te retrouver sur une longue liste d'attente clients",
+        "Aucun frais de recrutement ni salaire mensuel à porter, contrairement à une équipe interne",
         "Code livré et documenté : tu peux poursuivre le développement de ton application même si je ne suis plus ton développeur",
       ],
     },
@@ -414,9 +424,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     guarantee: {
       title: "La garantie",
-      lead: "Livré en 4 semaines. Au-delà, je continue sans facturer.",
+      lead: "Le périmètre est figé ensemble dès la semaine 1.",
       detail:
-        "Si le retard m'incombe, les semaines supplémentaires sont offertes jusqu'à la mise en production. Le périmètre est figé ensemble en semaine 1.",
+        "En cas de retard qui m'incombe, je finalise le développement du périmètre validé dans un délai supplémentaire d'une semaine — sans frais additionnels.",
     },
     faqSection: {
       title: "Questions fréquentes",
@@ -434,17 +444,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           question: "Que se passe-t-il si le périmètre change en cours de route ?",
           answer:
-            "On en reparle ensemble et on ajuste le devis si nécessaire. Jamais de facturation surprise sans validation de ta part.",
+            "On en reparle ensemble avant toute implémentation. Un ajout qui dépasse le périmètre validé en semaine 1 peut nécessiter un supplément, toujours discuté et validé avec toi avant d'être facturé.",
         },
         {
           question: "Comment se passe le paiement ?",
-          answer:
-            "Les modalités (acompte et jalons) sont précisées dans le devis, avant toute signature. Aucune surprise le jour J.",
+          answer: "Un acompte au démarrage, le solde à la livraison. Aucune surprise le jour J.",
         },
         {
           question: "Travailles-tu à partir d'une maquette Figma existante ?",
           answer:
-            "Oui, c'est même une bonne partie de mon quotidien : intégration fidèle au pixel près. Si tu n'as pas encore de maquette, on en parle pendant le cadrage.",
+            "Oui. Si tu n'as pas encore de maquette, on cadre les écrans ensemble pendant la semaine 1.",
         },
       ],
     },
@@ -457,8 +466,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Tu remplis le formulaire ci-contre avec ton nom et ton email.",
         "Tu es redirigé vers mon calendrier pour choisir un créneau de 30 minutes.",
         "On discute de ton projet en visio, gratuitement et sans engagement.",
-        "Si c'est aligné, tu reçois un devis détaillé sous 48h.",
-        "Dès validation du devis, le cadrage démarre : Semaine 1 commence.",
+        "Si c'est aligné, on valide ensemble le périmètre de ta v1 au tarif fixe de 1 000 €.",
+        "Le cadrage démarre : Semaine 1 commence.",
       ],
     },
     testimonials: {
@@ -469,7 +478,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           name: "Romaric Madegnan",
           rating: 4,
           quote:
-            "Cédric est un bon développeur web. Il m'a notamment aider dans le développement du site web d'un de nos clients. Il a de bonnes aptitudes en WordPress.",
+            "Cédric est un bon développeur web. Il m'a notamment aider dans le développement du site web d'un de nos clients.",
           date: "avril 2022",
         },
         {
@@ -513,8 +522,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       forYouAnswer:
         "Tu as un développeur confirmé, réellement investi dans la réussite de ton projet. J'utilise l'IA pour accélérer l'implémentation, ==sans jamais faire l'impasse sur la revue de code==.",
       closing: "Et à la fin, le code t'appartient. Entièrement.",
-      recognition:
-        "Waouh Monde, où j'ai évolué pendant 3 ans comme développeur puis responsable qualité, a été lauréat de la 1ère édition du Prix Gazelle au Bénin — une distinction qui récompense les entreprises à forte croissance et à fort impact.",
       cta: "Réserver mon appel de cadrage",
     },
     footer: {
@@ -536,7 +543,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "Your Application in 4 Weeks — Karel Towanou",
       description:
-        "Vue.js & Nuxt.js developer for SaaS and startups. I turn your idea into a working application in 4 weeks, from scoping to launch. Pricing on request.",
+        "Vue.js & Nuxt.js developer for SaaS and startups. I turn your idea into a working application in 4 weeks, from scoping to launch. Fixed price: €1,000.",
     },
     nav: { solution: "Solution", process: "Process", pricing: "Pricing", faq: "FAQ", cta: "Book a call" },
     hero: {
@@ -547,7 +554,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "I ==turn your idea== into a ==working application==, one you can show your first users within a month. Their feedback tells you what to build next, instead of guessing.",
       ctaPrimary: "Book my scoping call",
       ctaSecondary: "See the process",
-      note: "Pricing on request · Free scoping call · No commitment",
+      note: "€1,000 fixed price · Free scoping call · No commitment",
     },
     trust: { label: "Already used for:" },
     problems: {
@@ -565,7 +572,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     declic: {
       title: "The turning point",
       intro:
-        "If your project hasn't shipped yet, it's not because your idea is bad. It's because between the agency quoting €40,000 and six months for a first version, and the freelancer who vanishes without a word, no one has offered you ==a short path==.",
+        "If your project hasn't shipped yet, it's not because your idea is bad. It's because between the agency quoting €5,000 and six months for a first version, and the freelancer who vanishes without a word, no one has offered you ==a short path==.",
       beat: "And in your case, lost time costs far more than money.",
       costIntro:
         "Six months of development is six months paying without ==testing your product on the real market==.",
@@ -608,14 +615,38 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "A simple process, split into 4 phases, with a progress checkpoint every week.",
       phases: phasesEn,
     },
+    caseStudy: {
+      title: "Case study",
+      subtitle: "A personal project, to show you the method in real conditions.",
+      projectName: "OpinBase",
+      projectUrl: "https://bugreveal.com/",
+      steps: [
+        {
+          label: "The problem",
+          text: "Merchants — physical and online — have no simple way to know what their customers really think, and end up making decisions about their products and services without reliable data.",
+        },
+        {
+          label: "The locked scope",
+          text: "QR code generation, public review collection, a basic dashboard, real-time Telegram notifications. Nothing else for v1 — AI analysis, recommendations and alerts came later, once the product was validated by real usage.",
+        },
+        {
+          label: "The real duration",
+          text: "4 weeks, from the first commit to a real-time-notified product usable by real merchants.",
+        },
+        {
+          label: "The result",
+          text: "Knowing what customers don't say out loud, improving products and services accordingly, and building loyalty.",
+        },
+      ],
+    },
     pricing: {
       title: "The investment",
-      priceLabel: "On request",
+      priceLabel: "€1,000",
       description:
-        "Every application is different: price depends on functional scope, third-party integrations and the level of polish expected. No generic package that makes you pay for features you don't need.",
+        "A fixed price for a complete v1 in 4 weeks: scoping, development, testing and production launch. Built to test your idea fast, without breaking the bank.",
       bullets: [
-        "Detailed quote after the scoping call, no surprises",
-        "Work split into batches to prioritize what actually matters",
+        "5 times cheaper than a dev agency, which will charge you at least €5,000 and put you on a long client waitlist",
+        "No hiring costs or monthly salaries to carry, unlike an in-house team",
         "Code delivered and documented: you can keep building your application even if I'm no longer the developer",
       ],
     },
@@ -640,9 +671,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     guarantee: {
       title: "The guarantee",
-      lead: "Delivered in 4 weeks. Beyond that, I keep going at no extra charge.",
+      lead: "The scope is locked together as early as week 1.",
       detail:
-        "If the delay is on my end, the extra weeks are free until it's in production. The scope is locked together in week 1.",
+        "If a delay is on my end, I finish building the agreed scope within one extra week — at no additional cost.",
     },
     faqSection: {
       title: "Frequently asked questions",
@@ -658,16 +689,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           question: "What happens if the scope changes along the way?",
-          answer: "We talk it through and adjust the quote if needed. Never a surprise invoice without your approval.",
+          answer:
+            "We talk it through before any implementation. An addition that goes beyond the scope locked in week 1 may need a supplement, always discussed and approved by you before it's billed.",
         },
         {
           question: "How does payment work?",
-          answer: "Terms (deposit and milestones) are laid out in the quote, before any signature. No surprises on the day.",
+          answer: "A deposit at the start, the balance on delivery. No surprises on the day.",
         },
         {
           question: "Do you work from an existing Figma mockup?",
           answer:
-            "Yes, it's a big part of what I do: pixel-perfect integration. If you don't have a mockup yet, we'll cover it during scoping.",
+            "Yes. If you don't have a mockup yet, we'll scope the screens together during week 1.",
         },
       ],
     },
@@ -680,8 +712,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "You fill in the form with your name and email.",
         "You're redirected to my calendar to pick a 30-minute slot.",
         "We discuss your project over video, free and with no commitment.",
-        "If it's a fit, you receive a detailed quote within 48h.",
-        "As soon as the quote is approved, scoping starts: Week 1 begins.",
+        "If it's a fit, we lock in the scope of your v1 together at the fixed price of €1,000.",
+        "Scoping starts: Week 1 begins.",
       ],
     },
     testimonials: {
@@ -692,7 +724,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           name: "Romaric Madegnan",
           rating: 4,
           quote:
-            "Cedric is a good web developer. He helped us build a website for one of our clients. He has solid WordPress skills.",
+            "Cedric is a good web developer. He helped us build a website for one of our clients.",
           date: "April 2022",
         },
         {
@@ -735,8 +767,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       forYouAnswer:
         "You get a seasoned developer, genuinely invested in your project's success. I use AI to speed up implementation, ==never skipping code review==.",
       closing: "And at the end, the code is yours. Entirely.",
-      recognition:
-        "Waouh Monde, where I spent 3 years as a developer and later quality lead, won the first edition of the Gazelle Prize in Benin — an award recognizing high-growth, high-impact companies.",
       cta: "Book my scoping call",
     },
     footer: {
