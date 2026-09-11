@@ -375,11 +375,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       steps: [
         {
           label: "Le problème",
-          text: "Les commerçants — physiques comme en ligne — n'ont pas de moyen simple de savoir ce que leurs clients pensent vraiment, et prennent des décisions sur leurs produits et services sans données fiables.",
+          text: "Les commerçants savent que des outils de sondage existent (Typeform, Google Forms), mais ils sont conçus pour des équipes marketing, facturés en devises fortes, et trop complexes pour un usage quotidien simple. Résultat : la plupart des petits commerçants n'en utilisent aucun, et prennent leurs décisions produit sans données.",
         },
         {
           label: "Le périmètre figé",
-          text: "Génération de QR code, collecte d'avis publique, dashboard basique, notifications Telegram en temps réel. Rien d'autre pour la v1 — l'analyse IA, les recommandations et les alertes sont venues après, une fois le produit validé par l'usage.",
+          text: "Génération de QR code, collecte d'avis publique, dashboard basique, notifications Telegram en temps réel, l'analyse et la recommandation IA. Rien d'autre pour la v1 — les réponses automatiques, les alertes sont venues après, une fois le produit validé par l'usage.",
         },
         {
           label: "La durée réelle",
@@ -623,11 +623,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       steps: [
         {
           label: "The problem",
-          text: "Merchants — physical and online — have no simple way to know what their customers really think, and end up making decisions about their products and services without reliable data.",
+          text: "Merchants know survey tools exist (Typeform, Google Forms), but they're built for marketing teams, billed in strong currencies, and too complex for simple daily use. Result: most small merchants use none of them, and make product decisions without any data.",
         },
         {
           label: "The locked scope",
-          text: "QR code generation, public review collection, a basic dashboard, real-time Telegram notifications. Nothing else for v1 — AI analysis, recommendations and alerts came later, once the product was validated by real usage.",
+          text: "QR code generation, public review collection, a basic dashboard, real-time Telegram notifications, AI analysis and recommendations. Nothing else for v1 — automatic replies and alerts came later, once the product was validated by real usage.",
         },
         {
           label: "The real duration",
