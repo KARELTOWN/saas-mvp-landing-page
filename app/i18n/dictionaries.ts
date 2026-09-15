@@ -324,7 +324,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     declic: {
       title: "Le déclic",
       intro:
-        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce qu'entre l'agence à 5 000 € qui te promet six mois pour avoir une première version, et le freelance qui disparaît sans donner de nouvelles, personne ne t'a proposé ==un chemin court==.",
+        "Si ton projet n'a pas encore vu le jour, ce n'est pas parce que ton idée est mauvaise. C'est parce que tu passes beaucoup de temps à peaufiner le cahier des charges et à imaginer les fonctionnalités à la place des vrais utilisateurs, plutôt qu'à tester quelques fonctionnalités utiles sur le marché afin de recueillir leurs retours.",
       beat: "Et dans ton cas, le temps perdu coûte bien plus que de l'argent.",
       costIntro:
         "Six mois de développement, c'est six mois où tu paies sans ==tester ton produit sur le marché réel==.",
@@ -342,7 +342,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       insight:
         "Le déclic est venu de là. Ces projets n'ont pas échoué par manque de compétence technique — ==ils étaient souvent mieux construits que ceux qui marchent==. Ils ont échoué parce qu'ils ont attendu six mois avant de poser la seule question qui compte : ==est-ce que ça intéresse quelqu'un ?==",
       contrast:
-        "Un produit sorti en ==quatre semaines== a le droit de se tromper : il reste du budget pour corriger. Un produit sorti en ~~huit mois~~ a moins le droit à l'erreur, et c'est exactement ce qui le condamne.",
+        "Un produit sorti en ==quatre semaines== a le droit de se tromper : il reste du budget pour corriger. Un produit sorti en ~~dix mois~~ a moins le droit à l'erreur, et c'est exactement ce qui le condamne.",
       methodIntro: "D'où ma méthode :",
       method:
         "On fige le périmètre avant d'écrire la première ligne. Tu vois une démo chaque semaine, pas un rapport d'avancement. Et à la fin, ==le code t'appartient entièrement== — tu n'es prisonnier de personne, moi compris.",
