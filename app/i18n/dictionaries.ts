@@ -295,7 +295,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "Ton application en 4 semaines — Karel Towanou",
       description:
-        "Développeur Vue.js & Nuxt.js pour SaaS et startups. Je transforme ton idée en application fonctionnelle en 4 semaines, du cadrage au lancement. 1 000 € prix fixe.",
+        "Je transforme ton idée en MVP fonctionnel en 4 semaines, du cadrage au lancement. 1 000 € prix fixe.",
     },
     nav: { solution: "Solution", process: "Process", pricing: "Tarifs", faq: "FAQ", cta: "Réserver un appel" },
     hero: {
@@ -303,7 +303,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleHighlight: "4 semaines",
       titleAfter: ". Pas dans 6 mois",
       subtitle:
-        "Je ==transforme ton idée== en ==application fonctionnelle==, que tu peux montrer à tes premiers utilisateurs en un mois. Leurs retours te disent quoi construire ensuite, au lieu de le deviner.",
+        "Je transforme ton idée en MVP fonctionnel, que tu peux montrer à tes premiers utilisateurs en 4 semaines. On cadre ensemble le périmètre du MVP, tu valides ce qui doit être construit, puis je m'occupe du développement et de la mise en ligne.",
       ctaPrimary: "Réserver mon appel de cadrage",
       ctaSecondary: "Voir le déroulé",
       note: "1 000 € prix fixe · Appel de cadrage gratuit · Aucun engagement",
@@ -383,7 +383,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           label: "La durée réelle",
-          text: "4 semaines, du premier commit à un produit notifié en temps réel et utilisable par de vrais commerçants.",
+          text: "4 semaines entre la phase de préparation et la finalisation d'un produit utilisable par de vrais commerçants.",
         },
         {
           label: "Le résultat",
@@ -393,7 +393,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     pricing: {
       title: "L'investissement",
-      priceLabel: "1 000 €",
+      priceLabel: "1000 €",
       description:
         "Un tarif fixe pour une v1 complète en 4 semaines : cadrage, développement, tests et mise en production. Pensé pour tester ton idée vite, sans te ruiner.",
       bullets: [
@@ -403,7 +403,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     bonuses: {
-      title: "Inclus, sans supplément",
+      title: "Inclus",
       items: [
         {
           title: "Documentation technique complète",
@@ -416,9 +416,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Un point dédié à la fin du projet pour que tu sois autonome sur la base de code (ou ton futur développeur si tu décides de passer la main à un autre).",
         },
         {
-          title: "Disponibilité prioritaire 2 semaines après le lancement",
+          title: "Garantie de correction de bugs de 7 jours",
           description:
-            "Je reste joignable en priorité pour répondre à tes questions techniques pendant la mise en main.",
+            "Je reste à ta disposition pour répondre à tes questions techniques et corriger des éventuels bugs sur le travail réalisé.",
         },
       ],
     },
@@ -543,7 +543,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "Your Application in 4 Weeks — Karel Towanou",
       description:
-        "Vue.js & Nuxt.js developer for SaaS and startups. I turn your idea into a working application in 4 weeks, from scoping to launch. Fixed price: €1,000.",
+        "I turn your idea into a working application in 4 weeks, from scoping to launch. Fixed price: €1,000.",
     },
     nav: { solution: "Solution", process: "Process", pricing: "Pricing", faq: "FAQ", cta: "Book a call" },
     hero: {
@@ -551,7 +551,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleHighlight: "4 weeks",
       titleAfter: ". Not 6 months",
       subtitle:
-        "I ==turn your idea== into a ==working application==, one you can show your first users within a month. Their feedback tells you what to build next, instead of guessing.",
+        "I turn your validated idea into a working MVP you can put in front of your first users in 4 weeks. We define the MVP scope together, you approve what gets built, then I handle the development and launch..",
       ctaPrimary: "Book my scoping call",
       ctaSecondary: "See the process",
       note: "€1,000 fixed price · Free scoping call · No commitment",
