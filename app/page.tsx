@@ -281,19 +281,25 @@ export default function Home() {
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {dict.pricing.title}
           </h2>
-          <div className="mx-auto mt-6 inline-flex rounded-3xl border border-emerald-400/30 bg-emerald-400/5 px-10 py-6 sm:px-14 sm:py-8">
-            <span className="text-6xl font-bold tracking-tight text-emerald-400 sm:text-7xl">
+          <div className="mx-auto mt-6 inline-flex flex-col items-center rounded-3xl border border-emerald-400/30 bg-emerald-400/5 px-10 py-6 sm:px-14 sm:py-8">
+            <span className="text-sm font-medium uppercase tracking-[0.18em] text-zinc-400">
+              {dict.pricing.pricePrefix}
+            </span>
+            <span className="mt-1 text-6xl font-bold tracking-tight text-emerald-400 sm:text-7xl">
               {dict.pricing.priceLabel}
             </span>
           </div>
+          <p className="mx-auto mt-5 text-sm font-medium text-zinc-300">
+            {dict.pricing.targetDelay}
+          </p>
           <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
             {dict.pricing.description}
           </p>
-          <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
-            {dict.pricing.bullets.map((item) => (
+          <div className="mt-10 grid gap-4 text-left sm:grid-cols-2">
+            {dict.pricing.deliverables.map((item) => (
               <div
                 key={item}
-                className="rounded-xl border border-white/10 p-4 text-sm text-zinc-300"
+                className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-sm leading-relaxed text-zinc-300"
               >
                 {item}
               </div>

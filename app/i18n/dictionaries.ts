@@ -84,9 +84,11 @@ export interface Dictionary {
   };
   pricing: {
     title: string;
+    pricePrefix: string;
     priceLabel: string;
+    targetDelay: string;
     description: string;
-    bullets: string[];
+    deliverables: string[];
   };
   bonuses: { title: string; items: Bonus[] };
   guarantee: { title: string; lead: string; detail: string };
@@ -487,13 +489,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     pricing: {
       title: "L'investissement",
-      priceLabel: "1000 €",
+      pricePrefix: "À partir de",
+      priceLabel: "800 €",
+      targetDelay: "Délai cible : 4 semaines • Selon le périmètre validé",
       description:
-        "Un tarif fixe pour une v1 complète en 4 semaines : cadrage, développement, tests et mise en production. Pensé pour tester ton idée vite, sans te ruiner.",
-      bullets: [
-        "5 fois moins cher qu'une agence de développement, qui te facturera au minimum 5 000 € pour te retrouver sur une longue liste d'attente clients",
-        "Aucun frais de recrutement ni salaire mensuel à porter, contrairement à une équipe interne",
-        "Code livré et documenté : tu peux poursuivre le développement de ton application même si je ne suis plus ton développeur",
+        "Une première version exploitable pour avancer vers tes utilisateurs, avec un périmètre clair et validé ensemble.",
+      deliverables: [
+        "Cadrage de ton idée : Définition des fonctionnalités essentielles de ton MVP.",
+        "Conception de l'interface : Une application responsive adaptée à ton projet.",
+        "Développement sur mesure : Une solution construite selon tes besoins métier.",
+        "Intégration des API nécessaires : Connexion aux services prévus dans le périmètre.",
+        "Tests et corrections : Vérification des fonctionnalités livrées.",
+        "Livraison de ton MVP : Une première version exploitable pour avancer vers tes utilisateurs.",
       ],
     },
     bonuses: {
@@ -753,13 +760,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     pricing: {
       title: "The investment",
-      priceLabel: "€1,000",
+      pricePrefix: "From",
+      priceLabel: "€800",
+      targetDelay: "Target timeline: 4 weeks • Depending on the agreed scope",
       description:
-        "A fixed price for a complete v1 in 4 weeks: scoping, development, testing and production launch. Built to test your idea fast, without breaking the bank.",
-      bullets: [
-        "5 times cheaper than a dev agency, which will charge you at least €5,000 and put you on a long client waitlist",
-        "No hiring costs or monthly salaries to carry, unlike an in-house team",
-        "Code delivered and documented: you can keep building your application even if I'm no longer the developer",
+        "A usable first version to move toward your users, with a clear scope agreed together from the start.",
+      deliverables: [
+        "Idea scoping : Define the essential features of your MVP.",
+        "Interface design : A responsive application adapted to your project.",
+        "Custom development : A solution built around your business needs.",
+        "API integration : Connect the services included in the agreed scope.",
+        "Testing and fixes : Verify the delivered functionality.",
+        "MVP delivery : A first usable version to move toward your users.",
       ],
     },
     bonuses: {
