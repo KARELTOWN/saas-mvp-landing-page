@@ -191,14 +191,14 @@ export default function Home() {
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {[
-              "Vue.js",
-              "Nuxt.js",
+              "Vue.js | Nuxt",
               "React",
-              "Next.js",
               "TypeScript",
               "Tailwind CSS",
+              "Directus",
+              "Typesense",
               "Laravel",
-              "Node.js",
+              "Node.js | Express.js | Nest.js",
             ].map((tech) => (
               <span
                 key={tech}
