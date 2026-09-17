@@ -4,12 +4,12 @@ export const defaultLocale: Locale = "fr";
 
 interface Project {
   name: string;
-  year: string;
-  role: string;
+  summary: string;
   description: string;
   stack: string[];
   image: string;
   url: string;
+  links?: { label: string; url: string }[];
 }
 
 interface Phase {
@@ -37,7 +37,13 @@ interface Testimonial {
 
 export interface Dictionary {
   meta: { title: string; description: string };
-  nav: { solution: string; process: string; pricing: string; faq: string; cta: string };
+  nav: {
+    solution: string;
+    process: string;
+    pricing: string;
+    faq: string;
+    cta: string;
+  };
   hero: {
     titleBefore: string;
     titleHighlight: string;
@@ -76,13 +82,33 @@ export interface Dictionary {
     projectUrl: string;
     steps: { label: string; text: string }[];
   };
-  pricing: { title: string; priceLabel: string; description: string; bullets: string[] };
+  pricing: {
+    title: string;
+    priceLabel: string;
+    description: string;
+    bullets: string[];
+  };
   bonuses: { title: string; items: Bonus[] };
   guarantee: { title: string; lead: string; detail: string };
   faqSection: { title: string; items: Faq[] };
-  contact: { title: string; description: string; procedureTitle: string; procedure: string[] };
+  contact: {
+    title: string;
+    description: string;
+    procedureTitle: string;
+    procedure: string[];
+  };
   testimonials: { title: string; subtitle: string; items: Testimonial[] };
-  projects: { title: string; subtitle: string; items: Project[] };
+  projects: {
+    title: string;
+    subtitle: string;
+    detailsLabel: string;
+    modalEyebrow: string;
+    stackLabel: string;
+    projectLinkLabel: string;
+    linkUnavailableLabel: string;
+    closeLabel: string;
+    items: Project[];
+  };
   about: {
     title: string;
     intro: string;
@@ -112,127 +138,187 @@ export interface Dictionary {
 
 const projectsFr: Project[] = [
   {
-    name: "BugReveal",
-    year: "2026",
-    role: "Développeur Vue.js / Fullstack",
+    name: "Opinbase",
+    summary: "Transformez les retours clients en actions.",
     description:
-      "Application de collecte d'avis client et d'analyse par IA, pour aider les équipes à exploiter les retours et faciliter la prise de décision.",
-    stack: ["JavaScript", "Vue", "Express.js", "API OpenAI", "API REST"],
+      "Opinbase est une plateforme SaaS conçue pour aider les entreprises à recueillir, centraliser et exploiter les avis de leurs clients.\n\nL’idée est simple : permettre à une entreprise de recueillir le ressenti d’un client au moment où son expérience vient de se produire, plutôt que d’attendre qu’il publie spontanément un avis sur une plateforme externe.\n\nGrâce à un QR code placé dans un restaurant, une boutique, un hôtel, un centre de formation ou tout autre point de contact, le client peut accéder instantanément à un formulaire et partager son expérience en quelques secondes.\n\nL’entreprise peut ensuite retrouver l’ensemble de ces retours dans un espace centralisé, suivre leur évolution et identifier rapidement les situations nécessitant une intervention.\n\n## Comprendre ce que pensent réellement les clients\nOpinbase ne se limite pas à collecter des notes.\n\nLes retours peuvent être organisés et filtrés afin de faire ressortir les tendances, les problèmes récurrents et les points de satisfaction. L’entreprise peut ainsi suivre l’évolution de son expérience client dans le temps et comprendre ce qui fonctionne ou nécessite une amélioration.\n\nChaque avis peut également être suivi jusqu’à sa résolution. Une remarque négative ne reste donc pas simplement enregistrée dans une base de données : elle peut devenir un élément à traiter par l’équipe concernée.\n\n## Réagir rapidement aux avis importants\nLorsqu’un nouveau retour est reçu, l’entreprise peut être immédiatement informée.\n\nLes notifications permettent notamment aux équipes de prendre connaissance rapidement des avis sensibles et d’intervenir lorsqu’une situation nécessite une réponse.\n\nOpinbase permet également de consulter les retours directement depuis Telegram, notamment pour suivre les derniers avis et accéder rapidement aux informations importantes sans devoir se connecter systématiquement au tableau de bord.\n\n## Transformer les données en décisions\nÀ mesure que les avis s’accumulent, Opinbase permet de prendre du recul sur l’ensemble des retours collectés.\n\nL’entreprise peut notamment observer l’évolution de sa note, comparer les performances de différents QR codes et identifier les sujets qui reviennent régulièrement dans les commentaires.\n\nL’intelligence artificielle intervient également pour aider à analyser les retours, identifier les situations importantes, proposer des réponses et faire ressortir des pistes d’amélioration.\n\nL’objectif n’est donc pas simplement de savoir « combien de clients sont satisfaits ? », mais également de comprendre « pourquoi ? » et « que pouvons-nous améliorer ? ».\n\n## Une expérience adaptée à chaque entreprise\nChaque entreprise peut personnaliser son expérience de collecte afin de conserver son identité visuelle.\n\nLes QR codes peuvent être utilisés pour différencier plusieurs points de contact : un établissement, un service, une équipe, une campagne ou encore un événement.\n\nCela permet notamment aux entreprises disposant de plusieurs points de vente ou de plusieurs équipes de comprendre plus précisément d’où proviennent leurs retours.\n\n## Du feedback à la réputation en ligne\nOpinbase permet également de distinguer les retours positifs des retours nécessitant une prise en charge.\n\nLorsqu’un client est satisfait, l’entreprise peut l’orienter vers une plateforme d’avis externe afin de l’encourager à partager publiquement son expérience.\n\nÀ l’inverse, lorsqu’un client rencontre un problème, son retour peut être traité en interne afin de permettre à l’entreprise de comprendre la situation et d’y apporter une réponse.\n\nOpinbase crée ainsi un lien entre écoute du client, amélioration de l’expérience et réputation en ligne.\n\n## Une plateforme pensée pour les entreprises\nQu’il s’agisse d’un restaurant souhaitant connaître l’expérience de ses clients, d’un centre de formation souhaitant recueillir les impressions de ses apprenants ou d’une entreprise disposant de plusieurs établissements, Opinbase permet de centraliser les retours et de les exploiter depuis un même espace.\n\n### En résumé\nOpinbase transforme un simple QR code en un canal permanent de dialogue avec les clients.\n\nLe client peut facilement donner son avis.\n\nL’entreprise peut rapidement prendre connaissance des retours.\n\nLes données permettent d’identifier les problèmes récurrents.\n\nL’intelligence artificielle aide à comprendre les tendances et à déterminer les actions à envisager.\n\nEt les retours positifs peuvent contribuer à développer la réputation en ligne.\n\nL’objectif : ne plus seulement collecter des avis, mais utiliser chaque retour client comme une opportunité d’améliorer l’expérience et l’entreprise.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "Cloudflare R2",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Typesense",
+      "Docker",
+      "Docker Compose",
+      "OpenAI API",
+      "TailwindCSS",
+      "TypeScript",
+      "CI/CD GitLab",
+    ],
     image: "/projects/bugreveal.png",
-    url: "https://bugreveal.com/",
+    url: "",
   },
   {
-    name: "PISJ",
-    year: "2024",
-    role: "Développeur Vue.js puis chef de projet",
+    name: "FileTransfer",
+    summary: "Partagez vos fichiers simplement et en toute sécurité.",
     description:
-      "Plateforme d'information et de signalement judiciaire : parcours usager, traitement de dossiers, coordination projet et suivi de livraison.",
-    stack: ["PHP", "Laravel", "Vue", "MySQL"],
-    image: "/projects/pisj.png",
-    url: "https://pisj.justice.bj/",
+      "FileTransfer est une solution de transfert de fichiers conçue pour permettre à un utilisateur d’envoyer facilement plusieurs fichiers à un ou plusieurs destinataires.\n\nL’expérience est volontairement simple : l’expéditeur sélectionne ses fichiers, indique les destinataires et définit les conditions d’accès au transfert. Les destinataires reçoivent ensuite directement par email un lien leur permettant d’accéder aux fichiers et de les télécharger.\n\n## Un transfert pensé pour les fichiers importants\nFileTransfer permet de regrouper plusieurs fichiers au sein d’un même transfert, ce qui facilite notamment l’envoi de documents, d’images, de vidéos ou d’archives.\n\nL’expéditeur peut également définir une durée de validité pour son transfert. Une fois celle-ci dépassée, le contenu n’est plus accessible.\n\nPour les fichiers nécessitant une protection supplémentaire, un mot de passe peut être associé au transfert. Le destinataire doit alors fournir ce mot de passe avant de pouvoir accéder aux fichiers.\n\n## Une expérience entièrement automatisée\nL’un des objectifs du projet est de supprimer les étapes inutiles lors du partage.\n\nAprès la création d’un transfert, les destinataires sont automatiquement informés par email. Ils reçoivent un lien leur permettant d’accéder directement au contenu qui leur est destiné.\n\nL’expéditeur n’a donc pas besoin d’envoyer manuellement les liens à chaque personne.\n\n## Protéger les fichiers pendant leur stockage\nLes fichiers transférés sont protégés avant leur conservation dans l’espace de stockage.\n\nCette approche permet de limiter l’exposition des documents stockés et de conserver une séparation entre les fichiers eux-mêmes et les informations nécessaires à leur gestion.\n\nLorsqu’un destinataire télécharge un fichier, celui-ci lui est transmis dans son format d’origine.\n\n## Un accès contrôlé\nChaque transfert possède son propre accès.\n\nUn destinataire ne peut accéder qu’au transfert auquel son lien correspond, tandis que les conditions définies par l’expéditeur, notamment l’expiration ou la protection par mot de passe, sont prises en compte lors de l’accès.\n\nCela permet d’éviter de transformer le partage de fichiers en simple dépôt de documents accessible publiquement.\n\n## Une base pour différents usages\nFileTransfer peut servir de fondation à différents services de partage de fichiers :\n\n- transmission de documents à des clients ;\n- échanges de fichiers entre collaborateurs ;\n- envoi de dossiers administratifs ;\n- livraison de fichiers à des partenaires ou prestataires ;\n- partage de contenus volumineux ;\n- transmission de documents nécessitant une durée d’accès limitée.\n\nLa solution peut également être intégrée à une application ou à un portail existant afin d’ajouter une fonctionnalité de transfert de fichiers sans avoir à développer tout le mécanisme depuis zéro.\n\n## Le parcours en quelques étapes\nSélectionner → Destinataires → Protéger → Envoyer → Télécharger\n\nL’expéditeur garde le contrôle sur les conditions du partage, tandis que le destinataire bénéficie d’un accès direct depuis son email.\n\n### L’objectif du projet\nFileTransfer a été conçu autour d’un principe simple :\n\nRendre le transfert de fichiers aussi simple qu’un email, tout en apportant davantage de contrôle sur l’accès aux fichiers.\n\nLe projet constitue ainsi une base complète pour construire des services de transfert de fichiers personnalisés, adaptés aux besoins d’entreprises, d’équipes ou de plateformes SaaS.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "MySQL",
+      "Sequelize",
+      "Redis",
+      "Cloudflare R2",
+    ],
+    image: "/projects/case-study-default.svg",
+    url: "",
   },
   {
-    name: "Génération d'arrêtés",
-    year: "2024",
-    role: "Développeur Vue.js / Fullstack",
+    name: "SURVEY MC",
+    summary: "Plateforme d’enquête de satisfaction.",
     description:
-      "Plateforme de génération d'arrêtés pour le Ministère de la Justice : arrêtés de droit du sol, de mariage, de nationalité béninoise et de répudiation de nationalité, formulaires métier et automatisation documentaire.",
-    stack: ["PHP", "Laravel", "Vue", "Workflow"],
-    image: "/projects/arrete-justice.png",
-    url: "https://arrete.justice.bj/",
+      "SURVEY MC est une application interne conçue pour permettre à une organisation de créer, diffuser et gérer facilement des enquêtes de satisfaction auprès de ses collaborateurs.\n\nL’objectif est de simplifier toute la démarche de collecte de feedback : de la création du questionnaire jusqu’à sa diffusion auprès des personnes concernées.\n\nGrâce à une interface intuitive, les administrateurs peuvent concevoir des enquêtes adaptées à leurs différents besoins, en choisissant librement la manière dont chaque question doit être présentée. Les questionnaires peuvent ainsi s’adapter à différents types de réponses et de situations.\n\nL’application permet également de définir des conditions d’affichage afin de proposer une expérience plus personnalisée aux répondants. Certaines questions peuvent ainsi apparaître uniquement lorsque les réponses précédentes le justifient, permettant de construire des enquêtes plus pertinentes et moins contraignantes.\n\nUne fois l’enquête créée, elle peut être facilement partagée auprès des collaborateurs via différents canaux. L’objectif est de rendre la collecte des retours aussi simple que possible, tout en centralisant la gestion des enquêtes au sein d’un même espace.\n\nLes administrateurs disposent également d’un espace leur permettant de gérer les utilisateurs et l’accès à la plateforme, afin de conserver un environnement organisé et maîtrisé.\n\n## Une solution pensée pour écouter les collaborateurs\nSURVEY MC ne se limite pas à la création de questionnaires. L’application facilite la mise en place d’une véritable démarche de collecte de feedback interne.\n\nElle permet aux équipes de poser les bonnes questions, de recueillir plus facilement les opinions des collaborateurs et de disposer d’un outil centralisé pour organiser leurs différentes campagnes d’enquête.\n\nL’enjeu est simple : donner à l’entreprise un moyen structuré d’écouter ses collaborateurs et de mieux comprendre leur expérience.\n\n## Une expérience d’enquête flexible\nChaque enquête peut être construite selon les objectifs de l’administrateur. Qu’il s’agisse de mesurer la satisfaction, recueillir un avis, demander une information ou permettre au collaborateur de transmettre un document, les questionnaires peuvent être adaptés au contexte de chaque enquête.\n\nCette flexibilité permet d’utiliser la plateforme pour différents besoins internes sans devoir recréer un outil spécifique à chaque fois.\n\n## Une plateforme pensée pour évoluer\nSURVEY MC a été conçu comme une base permettant d’aller progressivement vers une solution plus complète de mesure et d’amélioration de l’expérience collaborateur.\n\nL’idée est de transformer progressivement les simples réponses aux questionnaires en une meilleure compréhension des attentes, des difficultés et du niveau de satisfaction des collaborateurs.\n\nSURVEY MC : créer des enquêtes simplement, recueillir les retours et mieux comprendre l’expérience des collaborateurs.",
+    stack: [
+      "TailwindCSS",
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "TypeScript",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "Docker Compose",
+    ],
+    image: "/projects/case-study-default.svg",
+    url: "",
   },
   {
-    name: "CLEVA",
-    year: "2024",
-    role: "Développeur Vue.js / Fullstack",
+    name: "BugReveal",
+    summary: "Feedback et monitoring utilisateur.",
     description:
-      "Application de gestion de parc automobile : suivi des véhicules, connectée à une API Laravel.",
-    stack: ["PHP", "Laravel", "Vue"],
-    image: "/projects/cleva.png",
-    url: "https://cleva.waouhmonde.com/",
+      "L’idée de BugReveal est inspirée de BugHerd.\n\nUn simple script JavaScript, généré depuis la plateforme et intégré à n’importe quelle application web, permet de collecter automatiquement différents événements :\n\n- erreurs JavaScript ;\n- erreurs et messages de console ;\n- clics et interactions utilisateur ;\n- rage clicks et comportements inhabituels ;\n- événements importants survenus pendant la navigation.\n\nLa plateforme peut également enregistrer les sessions des utilisateurs. Les données sont chiffrées puis stockées sur Cloudflare R2. L’utilisateur de la plateforme peut ensuite visualiser la session et identifier précisément le contexte et le moment où une erreur ou un comportement problématique s’est produit sur son site ou dans son application.\n\n### Feedback directement depuis l’application\nL’utilisateur final n’a pas besoin de quitter le site pour signaler un problème.\n\nDepuis l’application équipée du script, il peut notamment :\n\n- effectuer une capture d’écran ;\n- enregistrer son écran ;\n- ajouter des annotations ;\n- décrire son problème ;\n- envoyer directement son feedback.\n\nLe contexte technique associé au feedback peut également être automatiquement récupéré afin de faciliter le diagnostic par l’équipe de développement. Chaque feedback est accompagné d’un enregistrement de session, d’un enregistrement des erreurs de console et des anomalies applicatives, afin de comprendre la provenance du problème signalé.\n\n### Transformation du feedback en tâches\nLa plateforme peut être connectée à des outils de gestion de projet comme Trello. Un feedback utilisateur peut ainsi être transformé directement en tâche, avec les informations nécessaires au développeur : description, capture, session concernée, erreurs détectées et contexte technique.\n\nL’objectif est de permettre à une équipe de passer rapidement de :\n\n« Un utilisateur rencontre un problème » à : « Voici exactement ce qu’il a fait, l’erreur qui s’est produite et le contexte permettant de la reproduire. »\n\nLa plateforme devient ainsi un pont entre l’utilisateur, le produit et l’équipe technique.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "Cloudflare R2",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "rweb",
+      "Elasticsearch",
+      "Docker",
+      "Docker Compose",
+    ],
+    image: "/projects/case-study-default.svg",
+    url: "",
   },
   {
-    name: "Barreau du Togo",
-    year: "2023",
-    role: "Développeur Vue.js / Fullstack",
+    name: "ASOWEMAN",
+    summary: "Gestion des établissements scolaires et centres de formation.",
     description:
-      "Application de gestion administrative connectée à une API Laravel : tableaux de bord, formulaires, droits d'accès et suivi opérationnel.",
-    stack: ["PHP", "Laravel", "Vue", "Back-office"],
-    image: "/projects/barreau-togo.png",
-    url: "https://administration.barreaudutogo.tg/",
-  },
-  {
-    name: "XROAD, ADN et APIEX",
-    year: "2022",
-    role: "Développeur Vue.js/Nuxt.js",
-    description:
-      "Site réalisé en Nuxt et module de paiement consommant une API SOAP pour Drupal, Joomla et Prestashop.",
-    stack: ["Nuxt.js", "Laravel", "SOAP", "CMS"],
-    image: "/projects/web-institutionnel.png",
-    url: "https://apiex.bj/",
+      "ASOWEMAN est une plateforme de gestion conçue pour les établissements scolaires et centres de formation.\n\nElle permet de centraliser dans un même espace la gestion des apprenants, des formateurs et collaborateurs, des documents ainsi que différentes opérations administratives de l’établissement.\n\nL’objectif est de remplacer une gestion dispersée entre fichiers, documents et outils différents par un environnement unique permettant aux responsables de mieux organiser leur établissement au quotidien.\n\n## Gérer les apprenants simplement\nASOWEMAN permet de centraliser les informations relatives aux étudiants et apprenants de l’établissement.\n\nLes responsables peuvent retrouver leurs profils et organiser les informations selon les niveaux ou les catégories définies par l’établissement.\n\nCette centralisation facilite le suivi administratif et permet de disposer d’une information plus facilement accessible lorsqu’elle est nécessaire.\n\n## Gérer les équipes de l’établissement\nLa plateforme permet également de gérer les collaborateurs et les personnes intervenant dans l’établissement.\n\nLes informations peuvent être organisées selon les fonctions et les départements, permettant aux responsables d’avoir une vision plus claire de leur organisation.\n\nPour les centres de formation, cela permet notamment de mieux structurer les informations relatives aux équipes qui participent au fonctionnement des formations.\n\n## Simplifier la gestion administrative\nASOWEMAN regroupe plusieurs opérations administratives dans un même environnement.\n\nLes responsables peuvent notamment gérer les congés, les informations salariales et les prêts accordés aux collaborateurs, tout en conservant un historique des opérations.\n\nL’objectif est de réduire les tâches administratives répétitives et d’éviter la multiplication des fichiers utilisés pour suivre ces informations.\n\n## Centraliser les documents\nLes établissements produisent et utilisent quotidiennement de nombreux documents.\n\nASOWEMAN permet de les centraliser et de les organiser au sein de la plateforme.\n\nLes responsables peuvent également créer des modèles de documents réutilisables, puis générer de nouveaux documents à partir d’informations déjà disponibles.\n\nCela facilite notamment la production de documents administratifs et réduit le temps consacré aux tâches répétitives.\n\n## Une plateforme adaptée aux différents rôles\nDans un établissement, un administrateur, un responsable pédagogique ou un autre collaborateur n’ont pas nécessairement les mêmes responsabilités.\n\nASOWEMAN permet donc de définir les accès en fonction des rôles de chaque utilisateur.\n\nChacun peut ainsi disposer d’un accès correspondant à ses responsabilités, tout en protégeant les informations auxquelles il ne doit pas accéder.\n\n## Une meilleure visibilité sur l’activité\nLes opérations réalisées dans la plateforme peuvent être suivies afin de conserver une trace des actions importantes.\n\nCette fonctionnalité apporte davantage de transparence et facilite le suivi administratif de l’établissement.\n\nLes responsables peuvent ainsi mieux comprendre les actions effectuées dans la plateforme et conserver un historique des opérations.\n\n## Pour les écoles comme pour les centres de formation\nASOWEMAN a été pensé pour répondre aux besoins de structures qui doivent gérer à la fois leurs apprenants, leurs équipes et leurs opérations administratives.\n\nIl peut notamment être utilisé par :\n\n- établissements scolaires ;\n- écoles privées ;\n- centres de formation professionnelle ;\n- centres de formation continue ;\n- instituts et établissements spécialisés.\n\n## L’objectif du projet\nLa problématique est simple :\n\n> Comment permettre à un établissement de gérer ses apprenants et son administration depuis un seul espace ?\n\nASOWEMAN apporte une réponse en réunissant les principales informations et opérations de l’établissement dans une plateforme centralisée.\n\nASOWEMAN : une plateforme pour mieux organiser, administrer et piloter son établissement scolaire ou son centre de formation.",
+    stack: ["Laravel", "Node.js", "Vue.js", "MongoDB"],
+    image: "/projects/case-study-default.svg",
+    url: "",
   },
 ];
 
 const projectsEn: Project[] = [
   {
-    name: "BugReveal",
-    year: "2026",
-    role: "Vue.js / Fullstack Developer",
+    name: "Opinbase",
+    summary: "Turn customer feedback into action.",
     description:
-      "Customer feedback collection and AI-analysis application, helping teams act on feedback and speed up decision-making.",
-    stack: ["JavaScript", "Vue", "Express.js", "OpenAI API", "REST API"],
+      "Opinbase is a SaaS platform designed to help businesses collect, centralize and use customer feedback.\n\nBusinesses can capture a customer's experience as it happens through a QR code. Customers instantly access a form and share their experience.\n\nThe company can then find all feedback in one central space, track its evolution and quickly identify situations that require action.\n\nOpinbase also analyzes feedback, identifies recurring problems and uses artificial intelligence to understand trends and suggest areas for improvement.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "Cloudflare R2",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Typesense",
+      "Docker",
+      "Docker Compose",
+      "OpenAI API",
+      "TailwindCSS",
+      "TypeScript",
+      "GitLab CI/CD",
+    ],
     image: "/projects/bugreveal.png",
+    url: "",
+  },
+  {
+    name: "FileTransfer",
+    summary: "Share files simply and securely.",
+    description:
+      "FileTransfer is a file-transfer solution that lets users easily send multiple files to one or more recipients.\n\nThe sender selects files, adds recipients and defines access conditions. Recipients receive an email with a link to access and download the files.\n\nA transfer can be protected with a password and an expiration period. Files are also protected before being stored.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "MySQL",
+      "Sequelize",
+      "Redis",
+      "Cloudflare R2",
+    ],
+    image: "/projects/case-study-default.svg",
+    url: "",
+  },
+  {
+    name: "SURVEY MC",
+    summary: "Employee satisfaction survey platform.",
+    description:
+      "SURVEY MC is an internal application designed to help organizations create, distribute and manage employee satisfaction surveys.\n\nAdministrators can design surveys for their needs, customize questions and define display conditions for a more relevant respondent experience.\n\nThe platform makes it easier to collect feedback and provides a central space for organizing survey campaigns.",
+    stack: [
+      "TailwindCSS",
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "TypeScript",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "Docker Compose",
+    ],
+    image: "/projects/case-study-default.svg",
+    url: "",
+  },
+  {
+    name: "BugReveal",
+    summary: "User feedback and monitoring.",
+    description:
+      "BugReveal is a user feedback and monitoring platform inspired by BugHerd.\n\nA JavaScript script generated by the platform can be integrated into a web application to collect events such as JavaScript errors, console errors and messages, clicks, rage clicks and other important navigation events.\n\nThe platform can also record user sessions to identify the exact context in which an error or problematic behavior occurred.\n\nUsers can take screenshots, record their screen, add annotations and send feedback directly from the application.\n\nFeedback can then be turned into tasks through integrations with project management tools such as Trello.",
+    stack: [
+      "Node.js",
+      "Express.js ES6+",
+      "Vue.js",
+      "Cloudflare R2",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "rweb",
+      "Elasticsearch",
+      "Docker",
+      "Docker Compose",
+    ],
+    image: "/projects/case-study-default.svg",
     url: "https://bugreveal.com/",
   },
   {
-    name: "PISJ",
-    year: "2024",
-    role: "Vue.js Developer, then Project Lead",
+    name: "ASOWEMAN",
+    summary: "Management platform for schools and training centers.",
     description:
-      "Judicial information and reporting platform: user journeys, case handling, project coordination and delivery tracking.",
-    stack: ["PHP", "Laravel", "Vue", "MySQL"],
-    image: "/projects/pisj.png",
-    url: "https://pisj.justice.bj/",
-  },
-  {
-    name: "Decree Generation",
-    year: "2024",
-    role: "Vue.js / Fullstack Developer",
-    description:
-      "Platform for generating official decrees at the Beninese Ministry of Justice: land rights, marriage, nationality and nationality-renunciation decrees, business forms and document automation.",
-    stack: ["PHP", "Laravel", "Vue", "Workflow"],
-    image: "/projects/arrete-justice.png",
-    url: "https://arrete.justice.bj/",
-  },
-  {
-    name: "CLEVA",
-    year: "2024",
-    role: "Vue.js / Fullstack Developer",
-    description:
-      "Fleet management application: vehicle tracking, connected to a Laravel API.",
-    stack: ["PHP", "Laravel", "Vue"],
-    image: "/projects/cleva.png",
-    url: "https://cleva.waouhmonde.com/",
-  },
-  {
-    name: "Togo Bar Association",
-    year: "2023",
-    role: "Vue.js / Fullstack Developer",
-    description:
-      "Administrative management application connected to a Laravel API: dashboards, forms, access rights and operational tracking.",
-    stack: ["PHP", "Laravel", "Vue", "Back-office"],
-    image: "/projects/barreau-togo.png",
-    url: "https://administration.barreaudutogo.tg/",
-  },
-  {
-    name: "XROAD, ADN and APIEX",
-    year: "2022",
-    role: "Vue.js/Nuxt.js Developer",
-    description:
-      "Site built with Nuxt and a payment module consuming a SOAP API for Drupal, Joomla and Prestashop.",
-    stack: ["Nuxt.js", "Laravel", "SOAP", "CMS"],
-    image: "/projects/web-institutionnel.png",
-    url: "https://apiex.bj/",
+      "ASOWEMAN is a management platform designed for schools and training centers.\n\nIt centralizes information about learners, employees and the organization's administrative operations.\n\nThe platform manages students, employees, departments, leave, salaries, loans and administrative documents.\n\nIt also includes user and permission management so access can match each user's responsibilities.",
+    stack: ["Laravel", "Node.js", "Vue.js", "MongoDB"],
+    image: "/projects/case-study-default.svg",
+    url: "",
   },
 ];
 
@@ -297,7 +383,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       description:
         "Je transforme ton idée en MVP fonctionnel en 4 semaines, du cadrage au lancement. 1 000 € prix fixe.",
     },
-    nav: { solution: "Solution", process: "Process", pricing: "Tarifs", faq: "FAQ", cta: "Réserver un appel" },
+    nav: {
+      solution: "Solution",
+      process: "Process",
+      pricing: "Tarifs",
+      faq: "FAQ",
+      cta: "Réserver un appel",
+    },
     hero: {
       titleBefore: "Ton application en ligne dans ",
       titleHighlight: "4 semaines",
@@ -346,7 +438,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       methodIntro: "D'où ma méthode :",
       method:
         "On fige le périmètre avant d'écrire la première ligne. Tu vois une démo chaque semaine, pas un rapport d'avancement. Et à la fin, ==le code t'appartient entièrement== — tu n'es prisonnier de personne, moi compris.",
-      closing: "Quatre semaines. Ton produit en ligne. Avec assez de budget restant pour la suite.",
+      closing:
+        "Quatre semaines. Ton produit en ligne. Avec assez de budget restant pour la suite.",
     },
     solution: {
       title: "La solution",
@@ -364,12 +457,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     process: {
       title: "Le déroulé",
-      subtitle: "Un processus simple, découpé en 4 phases, avec un point d'avancement chaque semaine.",
+      subtitle:
+        "Un processus simple, découpé en 4 phases, avec un point d'avancement chaque semaine.",
       phases: phasesFr,
     },
     caseStudy: {
       title: "Étude de cas",
-      subtitle: "Un projet personnel, pour te montrer la méthode en conditions réelles.",
+      subtitle: "Un produit conçu pour répondre à un besoin métier concret.",
       projectName: "OpinBase",
       projectUrl: "https://bugreveal.com/",
       steps: [
@@ -442,13 +536,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Oui, à 100 %. Le code, la documentation et les accès te sont transférés intégralement à la fin du projet.",
         },
         {
-          question: "Que se passe-t-il si le périmètre change en cours de route ?",
+          question:
+            "Que se passe-t-il si le périmètre change en cours de route ?",
           answer:
             "On en reparle ensemble avant toute implémentation. Un ajout qui dépasse le périmètre validé en semaine 1 peut nécessiter un supplément, toujours discuté et validé avec toi avant d'être facturé.",
         },
         {
           question: "Comment se passe le paiement ?",
-          answer: "Un acompte au démarrage, le solde à la livraison. Aucune surprise le jour J.",
+          answer:
+            "Un acompte au démarrage, le solde à la livraison. Aucune surprise le jour J.",
         },
         {
           question: "Travailles-tu à partir d'une maquette Figma existante ?",
@@ -472,7 +568,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     testimonials: {
       title: "Ils me recommandent",
-      subtitle: "Avis clients vérifiés, laissés sur mon profil professionnel Google.",
+      subtitle:
+        "Avis clients vérifiés, laissés sur mon profil professionnel Google.",
       items: [
         {
           name: "Romaric Madegnan",
@@ -495,14 +592,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     projects: {
-      title: "Réalisations",
+      title: "Études de cas",
       subtitle:
-        "Une sélection de projets où Vue.js a joué un rôle central : du design Figma à l'application réactive, pilotée par API et prête pour la production.",
+        "Des produits conçus pour répondre à des besoins métier concrets, de la collecte de feedback au partage sécurisé de fichiers.",
+      detailsLabel: "Voir l'étude de cas",
+      modalEyebrow: "Étude de cas",
+      stackLabel: "Technologies",
+      projectLinkLabel: "Visiter le projet",
+      linkUnavailableLabel: "Lien non disponible",
+      closeLabel: "Fermer l'étude de cas",
       items: projectsFr,
     },
     about: {
       title: "À propos",
-      intro: "Je m'appelle Karel Towanou. Je construis des applications web depuis 2020.",
+      intro:
+        "Je m'appelle Karel Towanou. Je construis des applications web depuis 2020.",
       trackRecordLead:
         "Durant mon parcours, j'ai travaillé sur des projets d'institutions gouvernementales, d'entreprises et de startups :",
       trackRecordItems: [
@@ -545,7 +649,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       description:
         "I turn your idea into a working application in 4 weeks, from scoping to launch. Fixed price: €1,000.",
     },
-    nav: { solution: "Solution", process: "Process", pricing: "Pricing", faq: "FAQ", cta: "Book a call" },
+    nav: {
+      solution: "Solution",
+      process: "Process",
+      pricing: "Pricing",
+      faq: "FAQ",
+      cta: "Book a call",
+    },
     hero: {
       titleBefore: "Your app live in ",
       titleHighlight: "4 weeks",
@@ -594,7 +704,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       methodIntro: "Hence my method:",
       method:
         "We lock the scope before writing a single line. You see a demo every week, not a status report. And at the end, ==the code is entirely yours== — you're not held hostage by anyone, me included.",
-      closing: "Four weeks. Your product live. With enough budget left for what comes next.",
+      closing:
+        "Four weeks. Your product live. With enough budget left for what comes next.",
     },
     solution: {
       title: "The solution",
@@ -612,12 +723,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     process: {
       title: "The process",
-      subtitle: "A simple process, split into 4 phases, with a progress checkpoint every week.",
+      subtitle:
+        "A simple process, split into 4 phases, with a progress checkpoint every week.",
       phases: phasesEn,
     },
     caseStudy: {
       title: "Case study",
-      subtitle: "A personal project, to show you the method in real conditions.",
+      subtitle: "A product designed to solve a concrete business need.",
       projectName: "OpinBase",
       projectUrl: "https://bugreveal.com/",
       steps: [
@@ -665,7 +777,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: "Priority availability for 2 weeks after launch",
-          description: "I stay reachable as a priority to answer your technical questions during handover.",
+          description:
+            "I stay reachable as a priority to answer your technical questions during handover.",
         },
       ],
     },
@@ -685,7 +798,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           question: "Do I own the source code?",
-          answer: "Yes, 100%. The code, documentation and access are fully handed over at the end of the project.",
+          answer:
+            "Yes, 100%. The code, documentation and access are fully handed over at the end of the project.",
         },
         {
           question: "What happens if the scope changes along the way?",
@@ -694,7 +808,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           question: "How does payment work?",
-          answer: "A deposit at the start, the balance on delivery. No surprises on the day.",
+          answer:
+            "A deposit at the start, the balance on delivery. No surprises on the day.",
         },
         {
           question: "Do you work from an existing Figma mockup?",
@@ -718,7 +833,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     testimonials: {
       title: "What people say",
-      subtitle: "Verified client reviews, left on my professional Google profile.",
+      subtitle:
+        "Verified client reviews, left on my professional Google profile.",
       items: [
         {
           name: "Romaric Madegnan",
@@ -741,15 +857,23 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     projects: {
-      title: "Selected work",
+      title: "Case studies",
       subtitle:
-        "A selection of projects where Vue.js played a central role: from Figma design to a reactive, API-driven, production-ready application.",
+        "Products built to solve concrete business needs, from feedback collection to secure file sharing.",
+      detailsLabel: "View case study",
+      modalEyebrow: "Case study",
+      stackLabel: "Technology",
+      projectLinkLabel: "Visit project",
+      linkUnavailableLabel: "Private or unavailable link",
+      closeLabel: "Close case study",
       items: projectsEn,
     },
     about: {
       title: "About",
-      intro: "I'm Karel Towanou. I've been building web applications since 2020.",
-      trackRecordLead: "Along the way, I've worked on projects for government institutions, companies and startups:",
+      intro:
+        "I'm Karel Towanou. I've been building web applications since 2020.",
+      trackRecordLead:
+        "Along the way, I've worked on projects for government institutions, companies and startups:",
       trackRecordItems: [
         "Judicial reporting platform — Benin's Ministry of Justice",
         "Case management system — Personal Data Protection Authority",
