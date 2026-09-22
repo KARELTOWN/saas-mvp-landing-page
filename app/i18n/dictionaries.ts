@@ -383,7 +383,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "Ton application en 4 semaines — Karel Towanou",
       description:
-        "Je transforme ton idée en MVP fonctionnel en 4 semaines, du cadrage au lancement. 1 000 € prix fixe.",
+        "Je transforme ton idée en MVP fonctionnel en 4 semaines, du cadrage au lancement. 800 € prix fixe.",
     },
     nav: {
       solution: "Solution",
@@ -400,7 +400,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Je transforme ton idée en MVP fonctionnel, que tu peux montrer à tes premiers utilisateurs en 4 semaines. On cadre ensemble le périmètre du MVP, tu valides ce qui doit être construit, puis je m'occupe du développement et de la mise en ligne.",
       ctaPrimary: "Réserver mon appel de cadrage",
       ctaSecondary: "Voir le déroulé",
-      note: "1 000 € prix fixe · Appel de cadrage gratuit · Aucun engagement",
+      note: "800 € prix fixe · Appel de cadrage gratuit · Aucun engagement",
     },
     trust: { label: "Déjà utilisé pour :" },
     problems: {
@@ -569,7 +569,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Tu remplis le formulaire ci-contre avec ton nom et ton email.",
         "Tu es redirigé vers mon calendrier pour choisir un créneau de 30 minutes.",
         "On discute de ton projet en visio, gratuitement et sans engagement.",
-        "Si c'est aligné, on valide ensemble le périmètre de ta v1 au tarif fixe de 1 000 €.",
+        "Si c'est aligné, on valide ensemble le périmètre de ta v1 au tarif fixe de 800 €.",
         "Le cadrage démarre : Semaine 1 commence.",
       ],
     },
