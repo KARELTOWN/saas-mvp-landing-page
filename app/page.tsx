@@ -89,6 +89,17 @@ export default function Home() {
           <p className="max-w-2xl text-lg text-zinc-400">
             <Emphasized text={dict.hero.subtitle} />
           </p>
+          <div className="aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-emerald-500/10">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/aBfbEAgE3NQ"
+              title="Lancez votre saas en 4 semaines"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
