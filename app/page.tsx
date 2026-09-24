@@ -1,20 +1,10 @@
 import Image from "next/image";
-import CaseStudies from "./components/CaseStudies";
 import FloatingTechIcons from "./components/FloatingTechIcons";
 import LeadForm from "./components/LeadForm";
 import Reveal from "./components/Reveal";
 import { dictionaries } from "./i18n/dictionaries";
 
 const dict = dictionaries.fr;
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="text-amber-400" aria-label={`${rating} sur 5 étoiles`}>
-      {"★".repeat(rating)}
-      <span className="text-zinc-700">{"★".repeat(5 - rating)}</span>
-    </span>
-  );
-}
 
 function Emphasized({ text }: { text: string }) {
   const parts = text.split(/(==[^=]+==|~~[^~]+~~)/g);
@@ -53,335 +43,90 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07080a]/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="font-semibold tracking-tight">Karel Towanou</span>
+          <span className="text-sm font-semibold tracking-tight sm:text-base">
+            Karel Towanou
+          </span>
           <nav className="hidden gap-8 text-sm text-zinc-400 sm:flex">
-            <a href="#solution" className="hover:text-white">
-              {dict.nav.solution}
+            <a href="#masterclass" className="hover:text-white">
+              {dict.nav.masterclass}
             </a>
-            <a href="#process" className="hover:text-white">
-              {dict.nav.process}
-            </a>
-            <a href="#prix" className="hover:text-white">
-              {dict.nav.pricing}
+            <a href="#contact" className="hover:text-white">
+              {dict.nav.benefits}
             </a>
             <a href="#faq" className="hover:text-white">
               {dict.nav.faq}
             </a>
+            <a href="#apropos" className="hover:text-white">
+              {dict.nav.about}
+            </a>
           </nav>
           <a
             href="#contact"
-            className="rounded-full bg-emerald-500 px-4 py-2 text-sm font-medium text-black hover:bg-emerald-400"
+            className="shrink-0 whitespace-nowrap rounded-full bg-emerald-500 px-3 py-2 text-xs font-medium text-black hover:bg-emerald-400 sm:px-4 sm:text-sm"
           >
-            {dict.nav.cta}
+            <span className="sm:hidden">{dict.nav.ctaShort}</span>
+            <span className="hidden sm:inline">{dict.nav.cta}</span>
           </a>
         </div>
       </header>
 
-      {/* 1. Offre — Hero */}
-      <section className="relative overflow-hidden">
+      {/* 1. Hero — masterclass */}
+      <section id="masterclass" className="relative overflow-hidden">
         <FloatingTechIcons />
-        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 pb-20 pt-24 text-center">
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             {dict.hero.titleBefore}
             <span className="text-emerald-400">{dict.hero.titleHighlight}</span>
             {dict.hero.titleAfter}
           </h1>
-          <p className="max-w-2xl text-lg text-zinc-400">
+          <p className="max-w-2xl text-base text-zinc-400 sm:text-lg">
             <Emphasized text={dict.hero.subtitle} />
           </p>
-          <div className="aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-emerald-500/10">
+
+          {/* Ce que tu vas tirer de la masterclass */}
+          <div className="w-full max-w-3xl rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-left sm:p-7">
+            <h2 className="text-sm font-medium uppercase tracking-[0.18em] text-emerald-400">
+              {dict.hero.takeawaysTitle}
+            </h2>
+            <ul className="mt-5 flex flex-col gap-3">
+              {dict.hero.takeaways.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
+                  <span className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* La masterclass */}
+          <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-emerald-500/10">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/aBfbEAgE3NQ"
-              title="Lancez votre saas en 4 semaines"
+              src={`https://www.youtube-nocookie.com/embed/${dict.hero.videoId}`}
+              title={dict.hero.videoTitle}
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#contact"
-              className="rounded-full bg-emerald-500 px-6 py-3 font-medium text-black hover:bg-emerald-400"
-            >
-              {dict.hero.ctaPrimary}
-            </a>
-            <a
-              href="#process"
-              className="rounded-full border border-white/15 px-6 py-3 font-medium text-zinc-300 hover:bg-white/5"
-            >
-              {dict.hero.ctaSecondary}
-            </a>
-          </div>
+
+          <a
+            href="#contact"
+            className="w-full rounded-full bg-emerald-500 px-6 py-4 text-center font-medium text-black hover:bg-emerald-400 sm:w-auto sm:px-10"
+          >
+            {dict.hero.ctaPrimary}
+          </a>
           <p className="text-xs text-zinc-500">{dict.hero.note}</p>
         </div>
       </section>
 
-      {/* 2. Les problèmes */}
-      <section id="probleme">
-        <Reveal className="mx-auto max-w-4xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.problems.title}
-          </h2>
-          <div className="mt-10 flex flex-col gap-4">
-            {dict.problems.items.map((problem) => (
-              <div
-                key={problem}
-                className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-zinc-300"
-              >
-                {problem}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 3. Le déclic */}
-      <section className="border-t border-white/10 bg-white/[0.02] py-24">
-        <Reveal className="mx-auto max-w-3xl px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.declic.title}
-          </h2>
-          <div className="mt-8 flex flex-col gap-6 text-zinc-300">
-            <p>
-              <Emphasized text={dict.declic.intro} />
-            </p>
-            <p className="text-lg font-medium text-white">{dict.declic.beat}</p>
-            <p>
-              <Emphasized text={dict.declic.costIntro} />
-            </p>
-            <ul className="flex flex-col gap-2">
-              {dict.declic.costBullets.map((bullet) => (
-                <li key={bullet} className="flex items-start gap-2">
-                  <span className="mt-1 text-emerald-400">•</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-            <p>
-              <Emphasized text={dict.declic.costClosing} />
-            </p>
-            <p>
-              <Emphasized text={dict.declic.risk} />
-            </p>
-            <p className="text-zinc-400">{dict.declic.credibility}</p>
-            <p className="text-lg font-medium text-white">
-              <Emphasized text={dict.declic.hook} />
-            </p>
-            <p>
-              <Emphasized text={dict.declic.team} />
-            </p>
-            <p>
-              <Emphasized text={dict.declic.insight} />
-            </p>
-            <p>
-              <Emphasized text={dict.declic.contrast} />
-            </p>
-            <p className="font-medium text-white">{dict.declic.methodIntro}</p>
-          </div>
-          <div className="mt-6 rounded-xl border-l-4 border-emerald-400 bg-white/[0.03] p-5 text-zinc-200">
-            <Emphasized text={dict.declic.method} />
-          </div>
-          <div className="mt-10 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-6 text-center">
-            <p className="text-xl font-semibold text-emerald-400 sm:text-2xl">
-              {dict.declic.closing}
-            </p>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 4. La solution */}
-      <section id="solution">
-        <Reveal className="mx-auto max-w-4xl px-6 py-24 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.solution.title}
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400">
-            {dict.solution.description}
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {[
-              "Vue.js | Nuxt",
-              "React",
-              "TypeScript",
-              "Tailwind CSS",
-              "Directus",
-              "Typesense",
-              "Laravel",
-              "Node.js | Express.js | Nest.js",
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 5. La situation visée */}
-      <section className="border-t border-white/10 bg-white/[0.02] py-24">
-        <Reveal className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.situation.title}
-          </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {dict.situation.items.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-xl border border-white/10 p-5 text-zinc-300"
-              >
-                <span className="mt-1 text-emerald-400">→</span>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 6. Les détails */}
-      <section id="process">
-        <Reveal className="mx-auto max-w-5xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.process.title}
-          </h2>
-          <p className="mt-3 max-w-2xl text-zinc-400">
-            {dict.process.subtitle}
-          </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {dict.process.phases.map((phase) => (
-              <div
-                key={phase.title}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] p-6"
-              >
-                <span className="text-xs font-medium uppercase tracking-wide text-emerald-400">
-                  {phase.duration}
-                </span>
-                <h3 className="mt-2 text-xl font-medium">{phase.title}</h3>
-                <p className="mt-2 text-sm text-zinc-400">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Études de cas */}
-      <section className="border-t border-white/10 bg-white/[0.02] py-24">
-        <Reveal className="mx-auto max-w-5xl px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.projects.title}
-          </h2>
-          <p className="mt-3 max-w-2xl text-zinc-400">
-            {dict.projects.subtitle}
-          </p>
-          <CaseStudies dict={dict.projects} />
-        </Reveal>
-      </section>
-
-      {/* 7. L'investissement */}
-      <section
-        id="prix"
-        className="border-t border-white/10 bg-white/[0.02] py-24"
-      >
-        <Reveal className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.pricing.title}
-          </h2>
-          <div className="mx-auto mt-6 inline-flex flex-col items-center rounded-3xl border border-emerald-400/30 bg-emerald-400/5 px-10 py-6 sm:px-14 sm:py-8">
-            <span className="text-sm font-medium uppercase tracking-[0.18em] text-zinc-400">
-              {dict.pricing.pricePrefix}
-            </span>
-            <span className="mt-1 text-6xl font-bold tracking-tight text-emerald-400 sm:text-7xl">
-              {dict.pricing.priceLabel}
-            </span>
-          </div>
-          <p className="mx-auto mt-5 text-sm font-medium text-zinc-300">
-            {dict.pricing.targetDelay}
-          </p>
-          <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
-            {dict.pricing.description}
-          </p>
-          <div className="mt-10 grid gap-4 text-left sm:grid-cols-2">
-            {dict.pricing.deliverables.map((item) => (
-              <div
-                key={item}
-                className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-sm leading-relaxed text-zinc-300"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 8. Les bonus */}
-      <section>
-        <Reveal className="mx-auto max-w-5xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.bonuses.title}
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {dict.bonuses.items.map((bonus) => (
-              <div
-                key={bonus.title}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] p-6"
-              >
-                <h3 className="text-lg font-medium text-emerald-400">
-                  {bonus.title}
-                </h3>
-                <p className="mt-2 text-sm text-zinc-400">
-                  {bonus.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 9. La garantie */}
-      <section className="border-t border-white/10 bg-white/[0.02] py-24">
-        <Reveal className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.guarantee.title}
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-emerald-400">
-            {dict.guarantee.lead}
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-zinc-300">
-            {dict.guarantee.detail}
-          </p>
-        </Reveal>
-      </section>
-
-      {/* 10. La FAQ */}
-      <section id="faq">
-        <Reveal className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.faqSection.title}
-          </h2>
-          <div className="mt-10 flex flex-col gap-4">
-            {dict.faqSection.items.map((item) => (
-              <div
-                key={item.question}
-                className="rounded-xl border border-white/10 bg-white/[0.02] p-5"
-              >
-                <h3 className="font-medium text-white">{item.question}</h3>
-                <p className="mt-2 text-sm text-zinc-400">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 11. La procédure d'achat + formulaire */}
+      {/* 2. Les bénéfices de l'appel + formulaire */}
       <section
         id="contact"
-        className="border-t border-white/10 bg-white/[0.02] py-24"
+        className="border-t border-white/10 bg-white/[0.02] py-20 sm:py-24"
       >
         <Reveal className="mx-auto grid max-w-5xl gap-12 px-6 sm:grid-cols-2">
           <div>
@@ -400,45 +145,37 @@ export default function Home() {
             </ol>
           </div>
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h3 className="text-xl font-medium">{dict.contact.title}</h3>
             <p className="text-zinc-400">{dict.contact.description}</p>
             <LeadForm dict={dict.form} />
           </div>
         </Reveal>
       </section>
 
-      {/* 12. Les témoignages */}
-      <section>
-        <Reveal className="mx-auto max-w-5xl px-6 py-24">
+      {/* 3. La FAQ */}
+      <section id="faq">
+        <Reveal className="mx-auto max-w-3xl px-6 py-20 sm:py-24">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {dict.testimonials.title}
+            {dict.faqSection.title}
           </h2>
-          <p className="mt-3 max-w-2xl text-zinc-400">
-            {dict.testimonials.subtitle}
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {dict.testimonials.items.map((testimonial) => (
+          <div className="mt-10 flex flex-col gap-4">
+            {dict.faqSection.items.map((item) => (
               <div
-                key={testimonial.name}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] p-6"
+                key={item.question}
+                className="rounded-xl border border-white/10 bg-white/[0.02] p-5"
               >
-                <Stars rating={testimonial.rating} />
-                {testimonial.quote && (
-                  <p className="mt-3 text-zinc-300">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                )}
-                <p className="mt-4 text-sm text-zinc-500">
-                  {testimonial.name} · {testimonial.date}
-                </p>
+                <h3 className="font-medium text-white">{item.question}</h3>
+                <p className="mt-2 text-sm text-zinc-400">{item.answer}</p>
               </div>
             ))}
           </div>
         </Reveal>
       </section>
 
-      {/* 13. À propos */}
-      <section className="border-t border-white/10 bg-white/[0.02] py-24">
+      {/* 4. À propos */}
+      <section
+        id="apropos"
+        className="border-t border-white/10 bg-white/[0.02] py-20 sm:py-24"
+      >
         <Reveal className="mx-auto max-w-3xl px-6">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {dict.about.title}
@@ -484,18 +221,6 @@ export default function Home() {
             <p>
               <Emphasized text={dict.about.pivotAnswer} />
             </p>
-            <p className="text-lg font-medium text-white">
-              {dict.about.forYouHeading}
-            </p>
-            <p>
-              <Emphasized text={dict.about.forYouAnswer} />
-            </p>
-          </div>
-
-          <div className="mt-8 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-6 text-center">
-            <p className="text-xl font-semibold text-emerald-400 sm:text-2xl">
-              {dict.about.closing}
-            </p>
           </div>
 
           <a
@@ -510,23 +235,6 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-10 text-center text-sm text-zinc-500">
         <p>{dict.footer.line}</p>
-        <p className="mt-1 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="mailto:towanoukarel@gmail.com"
-            className="hover:text-zinc-300"
-          >
-            towanoukarel@gmail.com
-          </a>
-          <span className="text-zinc-700">·</span>
-          <a
-            href="https://www.linkedin.com/in/karel-towanou-7602bb266/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-zinc-300"
-          >
-            {dict.footer.linkedin}
-          </a>
-        </p>
       </footer>
     </div>
   );

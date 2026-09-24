@@ -4,11 +4,10 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
-  const name = typeof body?.name === "string" ? body.name.trim() : "";
   const email = typeof body?.email === "string" ? body.email.trim() : "";
 
-  if (!name || !email || !EMAIL_REGEX.test(email)) {
-    return NextResponse.json({ error: "Nom et email valides requis." }, { status: 400 });
+  if (!email || !EMAIL_REGEX.test(email)) {
+    return NextResponse.json({ error: "Email valide requis." }, { status: 400 });
   }
 
   const apiKey = process.env.BREVO_API_KEY;
@@ -28,7 +27,6 @@ export async function POST(request: NextRequest) {
     },
     body: JSON.stringify({
       email,
-      attributes: { FIRSTNAME: name },
       listIds: listId ? [listId] : undefined,
       updateEnabled: true,
     }),

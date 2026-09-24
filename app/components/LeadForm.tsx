@@ -7,7 +7,6 @@ const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/towanoukarel/30min";
 
 export default function LeadForm({ dict }: { dict: Dictionary["form"] }) {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,7 +20,7 @@ export default function LeadForm({ dict }: { dict: Dictionary["form"] }) {
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ email }),
       });
 
       if (!response.ok) {
@@ -38,21 +37,6 @@ export default function LeadForm({ dict }: { dict: Dictionary["form"] }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col gap-4">
-      <div className="flex flex-col gap-2 text-left">
-        <label htmlFor="name" className="text-sm text-zinc-400">
-          {dict.nameLabel}
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          className="rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-500 outline-none focus:border-emerald-400"
-          placeholder={dict.namePlaceholder}
-        />
-      </div>
       <div className="flex flex-col gap-2 text-left">
         <label htmlFor="email" className="text-sm text-zinc-400">
           {dict.emailLabel}
@@ -76,7 +60,6 @@ export default function LeadForm({ dict }: { dict: Dictionary["form"] }) {
       >
         {status === "loading" ? dict.loading : dict.submit}
       </button>
-      <p className="text-xs text-zinc-500">{dict.note}</p>
     </form>
   );
 }

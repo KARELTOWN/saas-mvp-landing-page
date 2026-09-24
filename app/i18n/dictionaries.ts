@@ -38,19 +38,23 @@ interface Testimonial {
 export interface Dictionary {
   meta: { title: string; description: string };
   nav: {
-    solution: string;
-    process: string;
-    pricing: string;
+    masterclass: string;
+    benefits: string;
     faq: string;
+    about: string;
     cta: string;
+    ctaShort: string;
   };
   hero: {
     titleBefore: string;
     titleHighlight: string;
     titleAfter: string;
     subtitle: string;
+    takeawaysTitle: string;
+    takeaways: string[];
+    videoId: string;
+    videoTitle: string;
     ctaPrimary: string;
-    ctaSecondary: string;
     note: string;
   };
   trust: { label: string };
@@ -94,7 +98,6 @@ export interface Dictionary {
   guarantee: { title: string; lead: string; detail: string };
   faqSection: { title: string; items: Faq[] };
   contact: {
-    title: string;
     description: string;
     procedureTitle: string;
     procedure: string[];
@@ -125,15 +128,12 @@ export interface Dictionary {
     closing: string;
     cta: string;
   };
-  footer: { line: string; linkedin: string };
+  footer: { line: string };
   form: {
-    nameLabel: string;
-    namePlaceholder: string;
     emailLabel: string;
     emailPlaceholder: string;
     submit: string;
     loading: string;
-    note: string;
     errorGeneric: string;
   };
 }
@@ -386,11 +386,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Je transforme ton idée en MVP fonctionnel en 4 semaines, du cadrage au lancement. 800 € prix fixe.",
     },
     nav: {
-      solution: "Solution",
-      process: "Process",
-      pricing: "Tarifs",
+      masterclass: "Masterclass",
+      benefits: "Bénéfices",
       faq: "FAQ",
-      cta: "Réserver un appel",
+      about: "À propos",
+      cta: "Réserver mon appel de cadrage",
+      ctaShort: "Réserver mon appel",
     },
     hero: {
       titleBefore: "Ton application en ligne dans ",
@@ -398,9 +399,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleAfter: ". Pas dans 6 mois",
       subtitle:
         "Je transforme ton idée en MVP fonctionnel, que tu peux montrer à tes premiers utilisateurs en 4 semaines. On cadre ensemble le périmètre du MVP, tu valides ce qui doit être construit, puis je m'occupe du développement et de la mise en ligne.",
+      takeawaysTitle: "Ce que tu vas tirer de cette masterclass",
+      takeaways: [
+        "Pourquoi tant de projets s'éloignent de leur objectif initial : construire une solution logicielle qui répond au besoin d'un marché cible, et qui est réellement utilisée.",
+        "Les erreurs que font beaucoup de porteurs d'idée de logiciels.",
+        "Pourquoi construire une première version de son application avec des fonctionnalités restreintes est la meilleure option.",
+      ],
+      videoId: "xqCsf42Zh2Q",
+      videoTitle: "Masterclass — Lancer son application en 4 semaines",
       ctaPrimary: "Réserver mon appel de cadrage",
-      ctaSecondary: "Voir le déroulé",
-      note: "800 € prix fixe · Appel de cadrage gratuit · Aucun engagement",
+      note: "Appel de cadrage gratuit de 30 minutes · Aucun engagement",
     },
     trust: { label: "Déjà utilisé pour :" },
     problems: {
@@ -538,39 +546,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Ça dépend entièrement du périmètre. C'est justement l'objet de l'appel de cadrage gratuit : je te dis honnêtement si c'est jouable, ou ce qu'il faudrait couper pour que ça le soit.",
         },
         {
-          question: "Est-ce que je possède le code source ?",
+          question: "L'appel de cadrage est-il vraiment gratuit ?",
           answer:
-            "Oui, à 100 %. Le code, la documentation et les accès te sont transférés intégralement à la fin du projet.",
+            "Oui. 30 minutes, sans frais et sans engagement. Tu repars avec l'utilisateur cible, le périmètre de ta v1 et tes tâches organisées, même si on ne travaille pas ensemble ensuite.",
         },
         {
-          question:
-            "Que se passe-t-il si le périmètre change en cours de route ?",
+          question: "Je n'ai qu'une idée, pas de cahier des charges. Ça suffit ?",
           answer:
-            "On en reparle ensemble avant toute implémentation. Un ajout qui dépasse le périmètre validé en semaine 1 peut nécessiter un supplément, toujours discuté et validé avec toi avant d'être facturé.",
+            "C'est exactement le bon moment. L'appel sert justement à transformer ton idée en un périmètre clair. Arriver sans document écrit ne pose aucun problème.",
         },
         {
-          question: "Comment se passe le paiement ?",
+          question: "À qui s'adresse cette masterclass ?",
           answer:
-            "Un acompte au démarrage, le solde à la livraison. Aucune surprise le jour J.",
+            "Aux porteurs d'idée qui veulent mettre une première version entre les mains d'utilisateurs réels : fondateurs non techniques, indépendants et dirigeants de petites structures qui ont un besoin métier précis.",
         },
         {
-          question: "Travailles-tu à partir d'une maquette Figma existante ?",
+          question: "Dois-je préparer quelque chose avant l'appel ?",
           answer:
-            "Oui. Si tu n'as pas encore de maquette, on cadre les écrans ensemble pendant la semaine 1.",
+            "Regarde la masterclass, puis note en quelques lignes le problème que ton produit résout et pour qui. C'est largement suffisant pour qu'on avance dès les premières minutes.",
+        },
+        {
+          question: "Et si mon projet ne tient pas en 4 semaines ?",
+          answer:
+            "Je te le dis pendant l'appel, sans détour. On identifie alors la partie de ton idée qui peut être mise en ligne en premier, et le reste attend les retours de tes utilisateurs.",
         },
       ],
     },
     contact: {
-      title: "Prêt à lancer ton application ?",
       description:
-        "Laisse ton nom et ton email, tu seras redirigé vers mon calendrier pour choisir un créneau d'appel de cadrage gratuit de 30 minutes.",
-      procedureTitle: "Comment ça se passe ?",
+        "Laisse ton email, tu seras redirigé vers mon calendrier pour choisir un créneau d'appel de cadrage gratuit de 30 minutes.",
+      procedureTitle: "Ce que je t'aide à définir lors de l'appel de cadrage",
       procedure: [
-        "Tu remplis le formulaire ci-contre avec ton nom et ton email.",
-        "Tu es redirigé vers mon calendrier pour choisir un créneau de 30 minutes.",
-        "On discute de ton projet en visio, gratuitement et sans engagement.",
-        "Si c'est aligné, on valide ensemble le périmètre de ta v1 au tarif fixe de 800 €.",
-        "Le cadrage démarre : Semaine 1 commence.",
+        "L'utilisateur cible de ton idée, pour ne pas construire un produit pour tout le monde — et donc pour personne.",
+        "Ce que la première version doit faire, et surtout ce qu'elle ne fera pas.",
+        "L'organisation de tes tâches pour arriver à une application fonctionnelle en 4 semaines.",
       ],
     },
     testimonials: {
@@ -615,15 +624,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro:
         "Je m'appelle Karel Towanou. Je construis des applications web depuis 2020.",
       trackRecordLead:
-        "Durant mon parcours, j'ai travaillé sur des projets d'institutions gouvernementales, d'entreprises et de startups :",
+        "En parallèle, j'ai conçu et développé mes propres produits SaaS, de l'idée à la mise en ligne :",
       trackRecordItems: [
-        "Plateforme de signalement judiciaire — Ministère de la Justice du Bénin",
-        "Système de gestion de dossiers — Autorité de Protection des Données Personnelles",
-        "Application de gestion administrative — Barreau du Togo",
-        "Application de gestion — Cour spéciale des affaires foncières de Cotonou",
+        "Opinbase — Collecte d'avis clients par QR code, avec analyse IA et notifications en temps réel",
+        "BugReveal — Feedback utilisateur et rejeu de session pour retrouver l'origine exacte d'un bug",
+        "FileTransfer — Envoi de fichiers protégé par mot de passe et lien à durée limitée",
+        "SURVEY MC — Plateforme d'enquêtes de satisfaction avec questions conditionnelles",
       ],
       trackRecordClosing:
-        "Des projets où les données sont sensibles, où les utilisateurs sont réels, et où ==un bug ne se règle pas par un message d'excuse==.",
+        "Sur chacun, j'ai eu à trancher exactement ce que tu vas trancher pendant l'appel de cadrage : ==ce qui entre dans la première version, et ce qui attend les retours des utilisateurs==.",
       today:
         "Aujourd'hui, je consacre mon temps à créer des applications web pour des startups qui veulent ==tester rapidement le marché== et valider leurs idées.",
       pivotQuestion: "Pourquoi ce virage ?",
@@ -636,17 +645,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "Réserver mon appel de cadrage",
     },
     footer: {
-      line: "Karel Towanou — Développeur Vue.js & Nuxt.js pour SaaS et startups",
-      linkedin: "LinkedIn",
+      line: "Je transforme votre idée en MVP en 4 semaines",
     },
     form: {
-      nameLabel: "Ton nom",
-      namePlaceholder: "Ton prénom",
       emailLabel: "Ton email",
       emailPlaceholder: "toi@startup.com",
       submit: "Réserver mon appel de cadrage",
       loading: "Envoi en cours...",
-      note: "Aucun engagement. Tu seras redirigé vers mon calendrier pour choisir un créneau.",
       errorGeneric: "Une erreur est survenue, réessaie.",
     },
   },
@@ -657,21 +662,29 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "I turn your idea into a working application in 4 weeks, from scoping to launch. Fixed price: €1,000.",
     },
     nav: {
-      solution: "Solution",
-      process: "Process",
-      pricing: "Pricing",
+      masterclass: "Masterclass",
+      benefits: "Benefits",
       faq: "FAQ",
-      cta: "Book a call",
+      about: "About",
+      cta: "Book my scoping call",
+      ctaShort: "Book my call",
     },
     hero: {
       titleBefore: "Your app live in ",
       titleHighlight: "4 weeks",
       titleAfter: ". Not 6 months",
       subtitle:
-        "I turn your validated idea into a working MVP you can put in front of your first users in 4 weeks. We define the MVP scope together, you approve what gets built, then I handle the development and launch..",
+        "I turn your validated idea into a working MVP you can put in front of your first users in 4 weeks. We define the MVP scope together, you approve what gets built, then I handle the development and launch.",
+      takeawaysTitle: "What you'll take away from this masterclass",
+      takeaways: [
+        "Why so many projects drift away from their original goal: building software that answers a real need in a target market, and that actually gets used.",
+        "The mistakes most software founders make.",
+        "Why building a first version with a deliberately limited set of features is the better option.",
+      ],
+      videoId: "xqCsf42Zh2Q",
+      videoTitle: "Masterclass — Launching your application in 4 weeks",
       ctaPrimary: "Book my scoping call",
-      ctaSecondary: "See the process",
-      note: "€1,000 fixed price · Free scoping call · No commitment",
+      note: "Free 30-minute scoping call · No commitment",
     },
     trust: { label: "Already used for:" },
     problems: {
@@ -809,38 +822,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "It entirely depends on scope. That's the whole point of the free scoping call: I'll tell you honestly whether it's doable, or what would need to be cut for it to be.",
         },
         {
-          question: "Do I own the source code?",
+          question: "Is the scoping call really free?",
           answer:
-            "Yes, 100%. The code, documentation and access are fully handed over at the end of the project.",
+            "Yes. 30 minutes, no charge and no commitment. You leave with your target user, the scope of your v1 and your tasks organized, even if we don't end up working together.",
         },
         {
-          question: "What happens if the scope changes along the way?",
+          question: "I only have an idea, no spec. Is that enough?",
           answer:
-            "We talk it through before any implementation. An addition that goes beyond the scope locked in week 1 may need a supplement, always discussed and approved by you before it's billed.",
+            "That's exactly the right moment. The call is there to turn your idea into a clear scope. Showing up without a written document is not a problem.",
         },
         {
-          question: "How does payment work?",
+          question: "Who is this masterclass for?",
           answer:
-            "A deposit at the start, the balance on delivery. No surprises on the day.",
+            "Founders who want to put a first version in the hands of real users: non-technical founders, freelancers and small-business owners with a specific business need.",
         },
         {
-          question: "Do you work from an existing Figma mockup?",
+          question: "Do I need to prepare anything before the call?",
           answer:
-            "Yes. If you don't have a mockup yet, we'll scope the screens together during week 1.",
+            "Watch the masterclass, then write down in a few lines the problem your product solves and who it's for. That's plenty for us to make progress from the first minutes.",
+        },
+        {
+          question: "What if my project doesn't fit into 4 weeks?",
+          answer:
+            "I'll tell you during the call, straight up. We then identify the part of your idea that can go live first, and the rest waits for feedback from your users.",
         },
       ],
     },
     contact: {
-      title: "Ready to launch your application?",
       description:
-        "Leave your name and email, you'll be redirected to my calendar to pick a free 30-minute scoping call slot.",
-      procedureTitle: "How it works",
+        "Leave your email, you'll be redirected to my calendar to pick a free 30-minute scoping call slot.",
+      procedureTitle: "What I help you define during the scoping call",
       procedure: [
-        "You fill in the form with your name and email.",
-        "You're redirected to my calendar to pick a 30-minute slot.",
-        "We discuss your project over video, free and with no commitment.",
-        "If it's a fit, we lock in the scope of your v1 together at the fixed price of €1,000.",
-        "Scoping starts: Week 1 begins.",
+        "The target user for your idea, so you don't build a product for everyone — and therefore for no one.",
+        "What the first version must do, and above all what it won't do.",
+        "How your tasks are organized to reach a working application in 4 weeks.",
       ],
     },
     testimonials: {
@@ -885,15 +900,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro:
         "I'm Karel Towanou. I've been building web applications since 2020.",
       trackRecordLead:
-        "Along the way, I've worked on projects for government institutions, companies and startups:",
+        "Alongside that, I've designed and built my own SaaS products, from idea to launch:",
       trackRecordItems: [
-        "Judicial reporting platform — Benin's Ministry of Justice",
-        "Case management system — Personal Data Protection Authority",
-        "Administrative management application — Togo Bar Association",
-        "Management application — Special Court for Land Affairs of Cotonou",
+        "Opinbase — Customer feedback collection through QR codes, with AI analysis and real-time notifications",
+        "BugReveal — User feedback and session replay to pinpoint exactly where a bug came from",
+        "FileTransfer — File sending protected by a password and a time-limited link",
+        "SURVEY MC — Satisfaction survey platform with conditional questions",
       ],
       trackRecordClosing:
-        "Projects where the data is sensitive, the users are real, and ==a bug doesn't get fixed with an apology message==.",
+        "On each one, I had to decide exactly what you'll decide during the scoping call: ==what goes into the first version, and what waits for user feedback==.",
       today:
         "Today, I spend my time building web applications for startups that want to ==quickly test the market== and validate their ideas.",
       pivotQuestion: "Why the shift?",
@@ -906,17 +921,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "Book my scoping call",
     },
     footer: {
-      line: "Karel Towanou — Vue.js & Nuxt.js developer for SaaS and startups",
-      linkedin: "LinkedIn",
+      line: "I turn your idea into an MVP in 4 weeks",
     },
     form: {
-      nameLabel: "Your name",
-      namePlaceholder: "Your first name",
       emailLabel: "Your email",
       emailPlaceholder: "you@startup.com",
       submit: "Book my scoping call",
       loading: "Sending...",
-      note: "No commitment. You'll be redirected to my calendar to pick a slot.",
       errorGeneric: "Something went wrong, please try again.",
     },
   },
