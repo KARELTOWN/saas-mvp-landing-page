@@ -398,7 +398,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleHighlight: "4 semaines",
       titleAfter: ". Pas dans 6 mois",
       subtitle:
-        "Je transforme ton idée en MVP fonctionnel, que tu peux montrer à tes premiers utilisateurs en 4 semaines. On cadre ensemble le périmètre du MVP, tu valides ce qui doit être construit, puis je m'occupe du développement et de la mise en ligne.",
+        "Je transforme ton idée en MVP fonctionnel, que tu peux montrer à tes premiers utilisateurs en 4 semaines.",
       takeawaysTitle: "Ce que tu vas tirer de cette masterclass",
       takeaways: [
         "Pourquoi tant de projets s'éloignent de leur objectif initial : construire une solution logicielle qui répond au besoin d'un marché cible, et qui est réellement utilisée.",
@@ -674,7 +674,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleHighlight: "4 weeks",
       titleAfter: ". Not 6 months",
       subtitle:
-        "I turn your validated idea into a working MVP you can put in front of your first users in 4 weeks. We define the MVP scope together, you approve what gets built, then I handle the development and launch.",
+        "I turn your idea into a working MVP you can put in front of your first users in 4 weeks.",
       takeawaysTitle: "What you'll take away from this masterclass",
       takeaways: [
         "Why so many projects drift away from their original goal: building software that answers a real need in a target market, and that actually gets used.",
