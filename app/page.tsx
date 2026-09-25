@@ -73,7 +73,7 @@ export default function Home() {
       {/* 1. Hero — masterclass */}
       <section id="masterclass" className="relative overflow-hidden">
         <FloatingTechIcons />
-        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 pb-8 pt-16 text-center sm:px-6 sm:pt-24">
           <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             {dict.hero.titleBefore}
             <span className="text-emerald-400">{dict.hero.titleHighlight}</span>
@@ -113,20 +113,13 @@ export default function Home() {
             />
           </div>
 
-          <a
-            href="#contact"
-            className="w-full rounded-full bg-emerald-500 px-6 py-4 text-center font-medium text-black hover:bg-emerald-400 sm:w-auto sm:px-10"
-          >
-            {dict.hero.ctaPrimary}
-          </a>
-          <p className="text-xs text-zinc-500">{dict.hero.note}</p>
         </div>
       </section>
 
       {/* 2. Les bénéfices de l'appel + formulaire */}
       <section
         id="contact"
-        className="border-t border-white/10 bg-white/[0.02] py-20 sm:py-24"
+        className="border-t border-white/10 bg-white/[0.02] pb-20 pt-10 sm:pb-24 sm:pt-12"
       >
         <Reveal className="mx-auto grid max-w-5xl gap-12 px-6 sm:grid-cols-2">
           <div>

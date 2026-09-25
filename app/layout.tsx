@@ -19,6 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${lato.variable} h-full antialiased`}>
+      <head>
+        <script src="http://localhost:5174/record.js" defer type="module"></script>
+        <script id="rrweb-init" data-project="6ab6681075340c55186af9b9"></script>
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );

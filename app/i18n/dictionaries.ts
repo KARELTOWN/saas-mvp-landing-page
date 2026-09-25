@@ -55,7 +55,6 @@ export interface Dictionary {
     videoId: string;
     videoTitle: string;
     ctaPrimary: string;
-    note: string;
   };
   trust: { label: string };
   problems: { title: string; items: string[] };
@@ -408,7 +407,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       videoId: "xqCsf42Zh2Q",
       videoTitle: "Masterclass — Lancer son application en 4 semaines",
       ctaPrimary: "Réserver mon appel de cadrage",
-      note: "Appel de cadrage gratuit de 30 minutes · Aucun engagement",
     },
     trust: { label: "Déjà utilisé pour :" },
     problems: {
@@ -684,7 +682,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       videoId: "xqCsf42Zh2Q",
       videoTitle: "Masterclass — Launching your application in 4 weeks",
       ctaPrimary: "Book my scoping call",
-      note: "Free 30-minute scoping call · No commitment",
     },
     trust: { label: "Already used for:" },
     problems: {
