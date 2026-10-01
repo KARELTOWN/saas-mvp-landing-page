@@ -20,9 +20,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="fr" className={`${lato.variable} h-full antialiased`}>
       <head>
         <script
-          async
+          src="http://localhost:5174/record.js"
           defer
-          src="https://tools.luckyorange.com/core/lo.js?site-id=b47db33f"
+          type="module"
+        ></script>
+        <script
+          id="rrweb-init"
+          data-project="6ab6681075340c55186af9b9"
         ></script>
       </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
